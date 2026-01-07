@@ -81,19 +81,19 @@ body {
     display: block;
 }
 
-/* Service Equation Styles */
+/* Service Equation Styles - Mobile First */
 .service-equation {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    padding: 20px;
+    gap: 3px;
+    padding: 8px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin: 0 10px;
-    max-width: calc(100vw - 40px);
-    flex-wrap: wrap;
+    margin: 0 5px;
+    max-width: calc(100vw - 20px);
+    flex-wrap: nowrap;
     box-sizing: border-box;
 }
 
@@ -103,14 +103,19 @@ body {
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    min-width: 100px;
-    min-height: 120px;
+    min-width: 42px;
+    min-height: 80px;
+    flex-shrink: 1;
+    flex-grow: 0;
+    flex-basis: auto;
+    position: relative;
 }
 
 .equation-icon {
-    width: 58px;
-    height: 58px;
-    margin-bottom: 10px;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 2px;
+    margin-top: 6px;
     filter: opacity(0.8);
     display: block;
     margin-left: auto;
@@ -127,147 +132,105 @@ body {
     justify-content: center;
     text-align: center;
     flex-grow: 1;
-    height: 80px;
-    min-height: 80px;
+    height: 50px;
+    min-height: 50px;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 6px;
 }
 
 .equation-number {
-    font-size: 24px;
+    font-size: 12px;
     font-weight: bold;
     color: #5a6b5d;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
     text-align: center;
 }
 
 .equation-title {
-    font-size: 16px;
+    font-size: 9px;
     font-weight: bold;
     color: #5a6b5d;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
     text-align: center;
+    line-height: 1;
 }
 
 .equation-subtitle {
-    font-size: 14px;
+    font-size: 8px;
     color: #5a6b5d;
     text-align: center;
+    line-height: 1;
 }
 
 .equation-operator {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 43px;
+    font-size: 20px;
     font-weight: bold;
     color: #5a6b5d;
-    margin: 0 10px;
-    margin-top: -20px;
+    margin: 0 2px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    flex-shrink: 0;
+    height: 80px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    body {
-        gap: 15px;
-        padding: 15px;
-    }
-    
-    .logo {
-        max-width: 85vw;
-        max-height: 200px;
-    }
-    
+/* Responsive adjustments - Mobile First */
+/* Small mobile improvements */
+@media (min-width: 400px) {
     .service-equation {
-        gap: 10px;
-        padding: 15px;
-        margin: 0 5px;
-        flex-direction: column;
-        align-items: center;
+        gap: 5px;
+        padding: 10px;
     }
     
     .equation-item {
-        min-width: 80px;
+        min-width: 50px;
+    }
+    
+    .equation-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .equation-number {
+        font-size: 14px;
+    }
+    
+    .equation-title {
+        font-size: 10px;
+    }
+    
+    .equation-operator {
+        font-size: 24px;
+        margin: 0 3px;
+    }
+}
+
+/* Tablet and larger phones */
+@media (min-width: 600px) {
+    .service-equation {
+        gap: 10px;
+        padding: 15px;
+        margin: 0 10px;
+        max-width: calc(100vw - 40px);
+    }
+    
+    .equation-item {
+        min-width: 70px;
         min-height: 100px;
     }
     
     .equation-icon {
         width: 45px;
         height: 45px;
-    }
-    
-    .equation-text {
-        height: 70px;
-        min-height: 70px;
-    }
-    
-    .equation-number {
-        font-size: 20px;
-    }
-    
-    .equation-title {
-        font-size: 13px;
-    }
-    
-    .equation-subtitle {
-        font-size: 11px;
-    }
-    
-    .equation-operator {
-        font-size: 35px;
-        margin: 10px 0;
-        margin-top: 0;
-        transform: rotate(90deg);
-    }
-    
-    .social-media-container {
-        gap: 12px;
-        padding: 12px;
-        margin: 0 10px;
-        max-width: calc(100vw - 40px);
-    }
-    
-    .social-icon {
-        width: 22px;
-        height: 22px;
-    }
-    
-    .contact {
-        padding: 12px 15px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        gap: 12px;
-        padding: 10px;
-    }
-    
-    .logo {
-        max-width: 90vw;
-        max-height: 150px;
-    }
-    
-    .service-equation {
-        padding: 12px;
-        gap: 8px;
-    }
-    
-    .equation-item {
-        min-width: 70px;
-        min-height: 90px;
-    }
-    
-    .equation-icon {
-        width: 40px;
-        height: 40px;
         margin-bottom: 8px;
     }
     
     .equation-text {
-        height: 60px;
-        min-height: 60px;
+        height: 65px;
+        min-height: 65px;
     }
     
     .equation-number {
@@ -275,32 +238,63 @@ body {
     }
     
     .equation-title {
-        font-size: 12px;
-        margin-bottom: 1px;
+        font-size: 13px;
+        margin-bottom: 2px;
     }
     
     .equation-subtitle {
-        font-size: 10px;
+        font-size: 11px;
     }
     
     .equation-operator {
-        font-size: 30px;
-        margin: 8px 0;
+        font-size: 32px;
+        margin: 0 8px;
+        margin-top: -18px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+    .service-equation {
+        gap: 15px;
+        padding: 20px;
+        margin: 0 20px;
+        max-width: 1000px;
     }
     
-    .social-media-container {
-        gap: 10px;
-        padding: 10px;
-        flex-wrap: wrap;
+    .equation-item {
+        min-width: 100px;
+        min-height: 120px;
     }
     
-    .social-icon {
-        width: 20px;
-        height: 20px;
+    .equation-icon {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 10px;
     }
     
-    .contact {
-        padding: 10px 12px;
-        font-size: 11px;
+    .equation-text {
+        height: 80px;
+        min-height: 80px;
+    }
+    
+    .equation-number {
+        font-size: 24px;
+        margin-bottom: 2px;
+    }
+    
+    .equation-title {
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
+    
+    .equation-subtitle {
+        font-size: 14px;
+    }
+    
+    .equation-operator {
+        font-size: 43px;
+        margin: 0 10px;
+        margin-top: -20px;
     }
 }
