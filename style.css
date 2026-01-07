@@ -3,27 +3,42 @@
     padding: 0;
 }
 
+/* SEO Hidden Content */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
 body {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #C96654;
-    gap: 30px;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .logo {
-    max-width: 600px;
-    max-height: 400px;
+    max-width: 90vw;
+    max-height: 300px;
     width: auto;
     height: auto;
 }
 
 .contact {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px 30px;
+    padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,6 +48,9 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     font-size: 14px;
+    margin: 0 10px;
+    max-width: calc(100vw - 40px);
+    word-break: break-all;
 }
 
 /* Social Media Styles */
@@ -68,14 +86,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 30px;
+    gap: 15px;
+    padding: 20px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin: 0 20px;
-    max-width: 1000px;
+    margin: 0 10px;
+    max-width: calc(100vw - 40px);
     flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .equation-item {
@@ -149,27 +168,139 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .service-equation {
+    body {
         gap: 15px;
-        padding: 20px;
+        padding: 15px;
+    }
+    
+    .logo {
+        max-width: 85vw;
+        max-height: 200px;
+    }
+    
+    .service-equation {
+        gap: 10px;
+        padding: 15px;
+        margin: 0 5px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .equation-item {
+        min-width: 80px;
+        min-height: 100px;
+    }
+    
+    .equation-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .equation-text {
+        height: 70px;
+        min-height: 70px;
+    }
+    
+    .equation-number {
+        font-size: 20px;
+    }
+    
+    .equation-title {
+        font-size: 13px;
+    }
+    
+    .equation-subtitle {
+        font-size: 11px;
+    }
+    
+    .equation-operator {
+        font-size: 35px;
+        margin: 10px 0;
+        margin-top: 0;
+        transform: rotate(90deg);
+    }
+    
+    .social-media-container {
+        gap: 12px;
+        padding: 12px;
         margin: 0 10px;
+        max-width: calc(100vw - 40px);
+    }
+    
+    .social-icon {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .contact {
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        gap: 12px;
+        padding: 10px;
+    }
+    
+    .logo {
+        max-width: 90vw;
+        max-height: 150px;
+    }
+    
+    .service-equation {
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .equation-item {
+        min-width: 70px;
+        min-height: 90px;
     }
     
     .equation-icon {
         width: 40px;
         height: 40px;
+        margin-bottom: 8px;
+    }
+    
+    .equation-text {
+        height: 60px;
+        min-height: 60px;
+    }
+    
+    .equation-number {
+        font-size: 18px;
     }
     
     .equation-title {
-        font-size: 14px;
+        font-size: 12px;
+        margin-bottom: 1px;
     }
     
     .equation-subtitle {
-        font-size: 12px;
+        font-size: 10px;
     }
     
     .equation-operator {
-        font-size: 20px;
-        margin: 0 5px;
+        font-size: 30px;
+        margin: 8px 0;
+    }
+    
+    .social-media-container {
+        gap: 10px;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .social-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .contact {
+        padding: 10px 12px;
+        font-size: 11px;
     }
 }
