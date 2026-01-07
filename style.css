@@ -313,4 +313,20 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
         margin: 0 10px;
         margin-top: -20px;
     }
+    
+    /* Desktop specific icon sizes - 50% larger + 60% more */
+    img[src="math_graphic_icons/design.svg"] {
+        width: 70.56px !important;
+        height: 70.56px !important;
+    }
+    
+    img[src="math_graphic_icons/stage.svg"] {
+        width: 73.92px !important;
+        height: 73.92px !important;
+    }
+    
+    img[src="math_graphic_icons/Moving Truck.svg"] {
+        width: 70.56px !important;
+        height: 70.56px !important;
+    }
 }
