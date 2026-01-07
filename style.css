@@ -101,7 +101,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     text-align: center;
     min-width: 40px;
     min-height: 80px;
@@ -116,7 +116,7 @@ body {
     width: 28px;
     height: 28px;
     margin-bottom: 2px;
-    margin-top: 6px;
+    margin-top: auto;
     filter: opacity(0.8);
     display: block;
     margin-left: auto;
@@ -132,11 +132,11 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-grow: 1;
+    flex-grow: 0;
     height: 50px;
     min-height: 50px;
     width: 100%;
-    margin-top: auto;
+    margin-top: 0;
     margin-bottom: 6px;
 }
 
@@ -183,18 +183,19 @@ body {
 
 /* Specific icon sizes */
 img[src="math_graphic_icons/design.svg"] {
-    width: 29.4px !important;
-    height: 29.4px !important;
+    width: 36.75px !important;
+    height: 36.75px !important;
 }
 
 img[src="math_graphic_icons/stage.svg"] {
-    width: 30.8px !important;
-    height: 30.8px !important;
+    width: 46.2px !important;
+    height: 46.2px !important;
 }
 
 img[src="math_graphic_icons/Moving Truck.svg"] {
-    width: 29.4px !important;
-    height: 29.4px !important;
+    width: 44.1px !important;
+    height: 44.1px !important;
+    margin-top: 5px !important;
 }
 
 /* Responsive adjustments - Mobile First */
@@ -326,17 +327,17 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
     
     /* Desktop specific icon sizes - 50% larger + 60% more */
     img[src="math_graphic_icons/design.svg"] {
-        width: 70.56px !important;
-        height: 70.56px !important;
+        width: 88.2px !important;
+        height: 88.2px !important;
     }
     
     img[src="math_graphic_icons/stage.svg"] {
-        width: 73.92px !important;
-        height: 73.92px !important;
+        width: 110.88px !important;
+        height: 110.88px !important;
     }
     
     img[src="math_graphic_icons/Moving Truck.svg"] {
-        width: 70.56px !important;
-        height: 70.56px !important;
+        width: 105.84px !important;
+        height: 105.84px !important;
     }
 }
