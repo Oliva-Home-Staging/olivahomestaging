@@ -86,8 +86,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3px;
-    padding: 8px;
+    gap: 0px;
+    padding: 6px 7.5px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -103,11 +103,11 @@ body {
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    min-width: 42px;
+    min-width: 35px;
     min-height: 80px;
     flex-shrink: 1;
-    flex-grow: 0;
-    flex-basis: auto;
+    flex-grow: 1;
+    flex-basis: 0;
     position: relative;
 }
 
@@ -141,7 +141,7 @@ body {
 
 .equation-number {
     font-size: 12px;
-    font-weight: bold;
+    font-weight: normal;
     color: #5a6b5d;
     margin-bottom: 1px;
     text-align: center;
@@ -149,7 +149,7 @@ body {
 
 .equation-title {
     font-size: 9px;
-    font-weight: bold;
+    font-weight: normal;
     color: #5a6b5d;
     margin-bottom: 1px;
     text-align: center;
@@ -168,13 +168,29 @@ body {
     font-size: 20px;
     font-weight: bold;
     color: #5a6b5d;
-    margin: 0 2px;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-shrink: 0;
     height: 80px;
+}
+
+/* Specific icon sizes */
+img[src="math_graphic_icons/design.svg"] {
+    width: 29.4px !important;
+    height: 29.4px !important;
+}
+
+img[src="math_graphic_icons/stage.svg"] {
+    width: 30.8px !important;
+    height: 30.8px !important;
+}
+
+img[src="math_graphic_icons/Moving Truck.svg"] {
+    width: 29.4px !important;
+    height: 29.4px !important;
 }
 
 /* Responsive adjustments - Mobile First */
