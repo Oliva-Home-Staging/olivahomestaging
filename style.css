@@ -34,3 +34,142 @@ body {
     text-align: center;
     font-size: 14px;
 }
+
+/* Social Media Styles */
+.social-media-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* Service Equation Styles */
+.service-equation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 0 20px;
+    max-width: 1000px;
+    flex-wrap: wrap;
+}
+
+.equation-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    min-width: 100px;
+    min-height: 120px;
+}
+
+.equation-icon {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 10px;
+    filter: opacity(0.8);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    flex-shrink: 0;
+}
+
+.equation-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #5a6b5d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1;
+    height: 80px;
+    min-height: 80px;
+}
+
+.equation-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5a6b5d;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.equation-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #5a6b5d;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.equation-subtitle {
+    font-size: 14px;
+    color: #5a6b5d;
+    text-align: center;
+}
+
+.equation-operator {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 43px;
+    font-weight: bold;
+    color: #5a6b5d;
+    margin: 0 10px;
+    margin-top: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .service-equation {
+        gap: 15px;
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .equation-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .equation-title {
+        font-size: 14px;
+    }
+    
+    .equation-subtitle {
+        font-size: 12px;
+    }
+    
+    .equation-operator {
+        font-size: 20px;
+        margin: 0 5px;
+    }
+}
