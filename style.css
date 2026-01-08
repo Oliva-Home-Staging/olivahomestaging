@@ -404,6 +404,36 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
     }
 }
 
+/* iPhone XR specific adjustments */
+@media (width: 414px) {
+    .equation-item:nth-child(5) .equation-text {
+        margin-top: 7px !important;
+    }
+    
+    .equation-item:nth-child(9) .equation-text {
+        margin-top: -4px !important;
+    }
+    
+    .equation-item:nth-child(5) .equation-icon {
+        margin-top: 8px !important;
+        transform: scale(1.05) !important;
+    }
+    
+    .equation-item:nth-child(3) .equation-icon {
+        margin-top: 5px !important;
+        transform: scale(1.06) !important;
+    }
+    
+    .equation-item:nth-child(1) .equation-icon {
+        margin-top: 5px !important;
+        transform: scale(1.16) !important;
+    }
+    
+    .equation-item:nth-child(7) .equation-icon {
+        margin-top: 1px !important;
+    }
+}
+
 /* Photo Showcase Carousel Styles - Mobile First */
 .photo-showcase {
     width: 100%;
