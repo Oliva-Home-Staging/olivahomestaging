@@ -138,6 +138,41 @@
         </div>
     </section>
     
+    <!-- Photo Showcase Carousel -->
+    <section class="photo-showcase" role="complementary" aria-label="Home Staging Portfolio">
+        <h2 class="showcase-title">Our Work</h2>
+        <div class="carousel-container">
+            <button class="carousel-btn carousel-btn-prev" aria-label="Previous photo" onclick="changePhoto(-1)">‹</button>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide active">
+                        <img src="staging_photos/34_30aiO.jpeg" alt="Professional Home Staging - Before and After Transformation" class="carousel-image" loading="lazy">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="staging_photos/CWtVlXGF.jpeg" alt="Luxury Home Staging - Living Room Design" class="carousel-image" loading="lazy">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="staging_photos/D55--1-7.jpeg" alt="Modern Home Staging - Kitchen and Dining Area" class="carousel-image" loading="lazy">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="staging_photos/D55--1-7.jpg" alt="Contemporary Home Staging - Alternative View" class="carousel-image" loading="lazy">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="staging_photos/LVQQ41Hz.jpeg" alt="Elegant Home Staging - Bedroom Suite" class="carousel-image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn carousel-btn-next" aria-label="Next photo" onclick="changePhoto(1)">›</button>
+        </div>
+        <div class="carousel-indicators" id="carouselIndicators">
+            <button class="indicator active" onclick="goToSlide(0)" aria-label="Go to photo 1"></button>
+            <button class="indicator" onclick="goToSlide(1)" aria-label="Go to photo 2"></button>
+            <button class="indicator" onclick="goToSlide(2)" aria-label="Go to photo 3"></button>
+            <button class="indicator" onclick="goToSlide(3)" aria-label="Go to photo 4"></button>
+            <button class="indicator" onclick="goToSlide(4)" aria-label="Go to photo 5"></button>
+        </div>
+    </section>
+    
     <!-- Social Media Buttons -->
     <div class="social-media-container">
         <a href="https://www.instagram.com/olivahomestaging/" class="social-link" target="_blank" rel="noopener noreferrer">
@@ -160,5 +195,74 @@
             <span itemprop="email">contact@olivahomestaging.com</span>
         </address>
     </footer>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+            // Remove active class from all slides and indicators
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Add active class to current slide and indicator
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            
+            // No transform needed - using opacity transitions
+        }
+        
+        function changePhoto(direction) {
+            currentSlide += direction;
+            
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+            
+            showSlide(currentSlide);
+        }
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+        
+        // Auto-advance carousel every 5 seconds
+        setInterval(() => {
+            changePhoto(1);
+        }, 5000);
+        
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+        
+        const carousel = document.querySelector('.carousel-wrapper');
+        
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        carousel.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changePhoto(1); // Swipe left - next photo
+                } else {
+                    changePhoto(-1); // Swipe right - previous photo
+                }
+            }
+        }
+    </script>
 </body>
 </html>
