@@ -65,7 +65,7 @@ body {
 .social-media-container {
     position: fixed;
     left: 0px;
-    bottom: 6%;
+    bottom: 7%;
     transform: translateY(50%);
     display: flex;
     flex-direction: column;
@@ -175,7 +175,7 @@ body {
 
 .equation-title {
     font-size: 8px;
-    font-weight: normal;
+    font-weight: bold;
     color: #5a6b5d;
     margin-bottom: 0px;
     text-align: center;
@@ -380,7 +380,29 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
         width: 76.67px !important;
         height: 76.67px !important;
         margin-top: 15px !important;
-    }}
+    }
+    
+    /* Text positioning adjustments for desktop */
+    .equation-item:nth-child(1) .equation-text {
+        margin-top: -5px !important;
+    }
+    
+    .equation-item:nth-child(3) .equation-text {
+        margin-top: -4px !important;
+    }
+    
+    .equation-item:nth-child(5) .equation-title {
+        margin-top: -1px !important;
+    }
+    
+    .equation-item:nth-child(7) .equation-title {
+        margin-top: -5px !important;
+    }
+    
+    .equation-item:nth-child(9) .equation-title {
+        margin-top: -20px !important;
+    }
+}
 
 /* Photo Showcase Carousel Styles - Mobile First */
 .photo-showcase {
