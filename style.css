@@ -40,37 +40,48 @@ body {
 
 .contact {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 12px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #333;
+    color: #5a6b5d;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     text-align: center;
     font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
     margin: 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 4px solid #5a6b5d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     max-width: 100%;
     width: 100%;
-    word-break: break-all;
     box-sizing: border-box;
 }
 
-/* Social Media Styles */
+/* Social Media Styles - Sticky Side Tab */
 .social-media-container {
+    position: fixed;
+    left: 0px;
+    bottom: 6%;
+    transform: translateY(50%);
     display: flex;
+    flex-direction: column;
     gap: 12px;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: 12px 8px;
     background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    margin: 0;
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 4px solid #5a6b5d;
+    border-left: none;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+/* Move social icons slightly away from edge on larger screens */
+@media (min-width: 600px) {
+    .social-media-container {
+        left: 0px;
+    }
 }
 
 .social-link {
@@ -494,15 +505,6 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
     
-    .social-media-container {
-        padding: 15px;
-        gap: 15px;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        max-width: calc(100vw - 30px);
-        width: auto;
-    }
-    
     .contact {
         padding: 15px 20px;
         border-radius: 10px;
@@ -554,12 +556,6 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
         width: calc(100vw - 40px);
     }
     
-    .social-media-container {
-        max-width: calc(100vw - 40px);
-        margin: 0 20px;
-        width: calc(100vw - 40px);
-    }
-    
     .contact {
         max-width: calc(100vw - 40px);
         margin: 0 20px;
@@ -603,12 +599,6 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
     
     .service-equation {
         max-width: 800px;
-        margin: 0 auto;
-        width: auto;
-    }
-    
-    .social-media-container {
-        max-width: 400px;
         margin: 0 auto;
         width: auto;
     }
