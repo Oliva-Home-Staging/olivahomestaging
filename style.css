@@ -249,6 +249,7 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
     
     .equation-title {
         font-size: 9px;
+        text-align: center;
     }
     
     .equation-operator {
@@ -291,6 +292,7 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
     .equation-title {
         font-size: 12px;
         margin-bottom: 1px;
+        text-align: center;
     }
     
     .equation-subtitle {
@@ -338,6 +340,7 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
     .equation-title {
         font-size: 16px;
         margin-bottom: 2px;
+        text-align: center;
     }
     
     .equation-subtitle {
@@ -352,20 +355,32 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
     
     /* Desktop specific icon sizes - 50% larger + 60% more */
     img[src="math_graphic_icons/design.svg"] {
-        width: 88.2px !important;
-        height: 88.2px !important;
+        width: 83.79px !important;
+        height: 83.79px !important;
+        margin-top: 10px !important;
     }
     
     img[src="math_graphic_icons/stage.svg"] {
-        width: 110.88px !important;
-        height: 110.88px !important;
+        width: 105.336px !important;
+        height: 105.336px !important;
     }
     
     img[src="math_graphic_icons/Moving Truck.svg"] {
-        width: 105.84px !important;
-        height: 105.84px !important;
+        width: 97.45px !important;
+        height: 97.45px !important;
+        margin-top: 17px !important;
+    }    
+    img[src="math_graphic_icons/piggy.svg"] {
+        width: 84.09px !important;
+        height: 84.09px !important;
+        margin-top: 15px !important;
     }
-}
+    
+    img[src="math_graphic_icons/calendar.svg"] {
+        width: 76.67px !important;
+        height: 76.67px !important;
+        margin-top: 15px !important;
+    }}
 
 /* Photo Showcase Carousel Styles - Mobile First */
 .photo-showcase {
