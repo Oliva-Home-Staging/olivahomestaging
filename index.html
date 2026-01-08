@@ -75,23 +75,24 @@
   gtag('config', 'G-5YRF6W1TBZ');
 </script>
 <body>
-    <!-- SEO Content -->
-    <header>
+    <!-- Header Container -->
+    <header class="header-container">
         <h1 class="visually-hidden">Best Affordable Home Staging in Los Angeles and Pasadena</h1>
         <img src="olivalogowhite.png" alt="Oliva Home Staging - Best Affordable Home Staging Services Los Angeles Pasadena Fast Professional" class="logo">
     </header>
     
-    <!-- Service Description for SEO -->
-    <section class="service-description visually-hidden">
+    <!-- SEO Content Container -->
+    <section class="seo-content-container visually-hidden">
         <h2>Fast, Affordable Home Staging Services</h2>
         <p>Oliva Home Staging provides the best, most affordable home staging services in Los Angeles and Pasadena. Our fast, professional staging transforms your property with a flat investment that includes 3 months of service, complete design, staging, and move-out assistance. We offer the cheapest rates without compromising quality.</p>
         <p>Serving Los Angeles, Pasadena, and surrounding areas with fast turnaround times and affordable pricing.</p>
     </section>
     
-    <!-- Service Equation Graphic -->
-    <section class="service-equation" role="main" aria-label="Home Staging Service Package">
+    <!-- Service Equation Container -->
+    <section class="equation-container" role="main" aria-label="Home Staging Service Package">
+        <!-- Investment Item - Pig Icon -->
         <div class="equation-item">
-            <img src="math_graphic_icons/piggy.svg" alt="Affordable Home Staging Flat Rate Investment" class="equation-icon">
+            <img src="equation_graphic_icons/pig-icon.svg" alt="Affordable Home Staging Flat Rate Investment" class="equation-icon">
             <div class="equation-text">
               <div class="equation-number">1</div>  
               <div class="equation-title">Flat</div>
@@ -101,8 +102,9 @@
         
         <div class="equation-operator">=</div>
         
+        <!-- Duration Item - Calendar Icon -->
         <div class="equation-item">
-            <img src="math_graphic_icons/calendar.svg" alt="3 Months Home Staging Service Included" class="equation-icon">
+            <img src="equation_graphic_icons/calendar-icon.svg" alt="3 Months Home Staging Service Included" class="equation-icon">
             <div class="equation-text">
                 <div class="equation-number">3</div>
                 <div class="equation-title">Months</div>
@@ -112,8 +114,9 @@
         
         <div class="equation-operator">+</div>
         
+        <!-- Design Item - Plan Icon -->
         <div class="equation-item">
-            <img src="math_graphic_icons/design.svg" alt="Professional Home Staging Design Los Angeles" class="equation-icon">
+            <img src="equation_graphic_icons/plan-icon.svg" alt="Professional Home Staging Design Los Angeles" class="equation-icon">
             <div class="equation-text">
                 <div class="equation-title">Design</div>
             </div>
@@ -121,8 +124,9 @@
         
         <div class="equation-operator">+</div>
         
+        <!-- Staging Item - Bedroom Icon -->
         <div class="equation-item">
-            <img src="math_graphic_icons/stage.svg" alt="Fast Home Staging Setup Pasadena" class="equation-icon">
+            <img src="equation_graphic_icons/bedroom-icon.svg" alt="Fast Home Staging Setup Pasadena" class="equation-icon">
             <div class="equation-text">
                 <div class="equation-title">Stage</div>
             </div>
@@ -130,21 +134,23 @@
         
         <div class="equation-operator">+</div>
         
+        <!-- Move Out Item - Truck Icon -->
         <div class="equation-item">
-            <img src="math_graphic_icons/Moving Truck.svg" alt="Home Staging Move Out Service" class="equation-icon">
+            <img src="equation_graphic_icons/truck-icon.svg" alt="Home Staging Move Out Service" class="equation-icon">
             <div class="equation-text">
                 <div class="equation-title">Move out</div>
             </div>
         </div>
     </section>
     
-    <!-- Photo Showcase Carousel -->
-    <section class="photo-showcase" role="complementary" aria-label="Home Staging Portfolio">
+    <!-- Photo Showcase Container -->
+    <section class="carousel-container-section" role="complementary" aria-label="Home Staging Portfolio">
         <h2 class="showcase-title">Our Work</h2>
         <div class="carousel-container">
             <button class="carousel-btn carousel-btn-prev" aria-label="Previous photo" onclick="changePhoto(-1)">‹</button>
             <div class="carousel-wrapper">
                 <div class="carousel-track" id="carouselTrack">
+                    <!-- Carousel Slide Images -->
                     <div class="carousel-slide active">
                         <img src="staging_photos/34_30aiO.jpeg" alt="Professional Home Staging - Before and After Transformation" class="carousel-image" loading="lazy">
                     </div>
@@ -164,6 +170,7 @@
             </div>
             <button class="carousel-btn carousel-btn-next" aria-label="Next photo" onclick="changePhoto(1)">›</button>
         </div>
+        <!-- Carousel Navigation Indicators -->
         <div class="carousel-indicators" id="carouselIndicators">
             <button class="indicator active" onclick="goToSlide(0)" aria-label="Go to photo 1"></button>
             <button class="indicator" onclick="goToSlide(1)" aria-label="Go to photo 2"></button>
@@ -173,31 +180,38 @@
         </div>
     </section>
     
-    <!-- Social Media Buttons -->
-    <div class="social-media-container">
+    <!-- Social Media Container -->
+    <div class="socials-container">
+        <!-- Instagram Link -->
         <a href="https://www.instagram.com/olivahomestaging/" class="social-link" target="_blank" rel="noopener noreferrer">
             <img src="https://github.com/Antonomy/emailsignature/blob/main/instagram-icon.png?raw=true" 
                  alt="Oliva Instagram" class="social-icon">
         </a>
+        <!-- Facebook Link -->
         <a href="https://www.facebook.com/profile.php?id=61586034364471" class="social-link" target="_blank" rel="noopener noreferrer">
             <img src="https://github.com/Antonomy/emailsignature/blob/main/facebook-icon.png?raw=true" 
                  alt="Oliva Facebook" class="social-icon">
         </a>
     </div>
     
-    <footer>
+    <!-- Footer Container -->
+    <footer class="footer-container">
+        <!-- Contact Information -->
         <address class="contact" itemscope itemtype="https://schema.org/LocalBusiness">
             <span class="visually-hidden">Contact Oliva Home Staging for fast, affordable home staging in Los Angeles and Pasadena:</span>
             <span itemprop="email">contact@olivahomestaging.com</span>
         </address>
     </footer>
     
+    <!-- Carousel JavaScript -->
     <script>
+        // Carousel State Management
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const indicators = document.querySelectorAll('.indicator');
         const totalSlides = slides.length;
         
+        // Show specific slide function
         function showSlide(index) {
             // Remove active class from all slides and indicators
             slides.forEach(slide => slide.classList.remove('active'));
@@ -206,10 +220,9 @@
             // Add active class to current slide and indicator
             slides[index].classList.add('active');
             indicators[index].classList.add('active');
-            
-            // No transform needed - using opacity transitions
         }
         
+        // Navigate between photos
         function changePhoto(direction) {
             currentSlide += direction;
             
@@ -222,6 +235,7 @@
             showSlide(currentSlide);
         }
         
+        // Go to specific slide
         function goToSlide(index) {
             currentSlide = index;
             showSlide(currentSlide);
@@ -232,21 +246,24 @@
             changePhoto(1);
         }, 5000);
         
-        // Touch/swipe support for mobile
+        // Touch/swipe support for mobile devices
         let startX = 0;
         let endX = 0;
         
         const carousel = document.querySelector('.carousel-wrapper');
         
+        // Handle touch start
         carousel.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
         });
         
+        // Handle touch end and determine swipe direction
         carousel.addEventListener('touchend', (e) => {
             endX = e.changedTouches[0].clientX;
             handleSwipe();
         });
         
+        // Process swipe gesture
         function handleSwipe() {
             const swipeThreshold = 50;
             const diff = startX - endX;
