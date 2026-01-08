@@ -32,10 +32,12 @@ body {
 }
 
 .logo {
-    max-width: calc(100% - 10px);
-    max-height: 300px;
+    max-width: calc((100% - 10px) * 0.8);
+    max-height: 240px;
     width: auto;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .contact {
@@ -53,6 +55,9 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     max-width: 100%;
     width: 100%;
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
     box-sizing: border-box;
 }
 
@@ -598,9 +603,9 @@ img[src="math_graphic_icons/Moving Truck.svg"] {
     }
     
     .service-equation {
-        max-width: 800px;
+        max-width: 900px;
         margin: 0 auto;
-        width: auto;
+        width: 900px;
     }
     
     .contact {
