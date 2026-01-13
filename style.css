@@ -553,6 +553,64 @@ img[src="equation_graphic_icons/truck-icon.svg"] {
     border-radius: 10px;
 }
 
+/* Single photo display */
+.single-photo {
+    width: 100%;
+    height: 100%;
+}
+
+/* 2x2 Grid layout for multiple photos */
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Partial grids for remaining photos */
+.partial-grid-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.partial-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.partial-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.partial-grid-3 .grid-image:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 50%;
+}
+
+.grid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
 .carousel-btn {
     position: absolute;
     top: 50%;
