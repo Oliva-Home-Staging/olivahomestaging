@@ -245,8 +245,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 20px 15px;
-    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0 15px;
     border-radius: 15px;
     width: 100%;
     flex-wrap: nowrap;
@@ -570,7 +569,7 @@ section {
     /* Equation container adjustments */
     .equation-container {
         gap: 4px;
-        padding: 15px 10px;
+        padding: 0 10px;
     }
     
     .equation-item {
@@ -703,7 +702,7 @@ section {
     
     .equation-container {
         gap: 2px;
-        padding: 12px 8px;
+        padding: 0 8px;
     }
     
     .equation-item {
