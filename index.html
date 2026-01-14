@@ -80,6 +80,9 @@
     <!-- Navigation -->
     <nav class="navigation">
         <div class="nav-container">
+            <div class="nav-logo" id="navLogo">
+                <img src="oliva_logo_horizontal_inverse.svg" alt="Oliva" class="nav-logo-img">
+            </div>
             <div class="nav-links">
                 <div class="nav-slider"></div>
                 <a href="#" class="nav-link active" onclick="showPage('index', this)">Portfolio</a>
@@ -349,11 +352,33 @@
             }
         }
 
+        // Handle scroll for nav logo visibility
+        function handleNavLogoScroll() {
+            const navLogo = document.getElementById('navLogo');
+            const headerContainer = document.querySelector('.header-container');
+            
+            if (navLogo && headerContainer) {
+                const headerRect = headerContainer.getBoundingClientRect();
+                const isHeaderVisible = headerRect.bottom > 0;
+                
+                if (isHeaderVisible) {
+                    navLogo.classList.remove('visible');
+                } else {
+                    navLogo.classList.add('visible');
+                }
+            }
+        }
+
         // Initialize with portfolio page
         document.addEventListener('DOMContentLoaded', function() {
             showPage('index', document.querySelector('.nav-link'));
             // Initialize slider position after a short delay to ensure layout is ready
             setTimeout(initializeNavSlider, 100);
+            
+            // Add scroll listener for nav logo
+            window.addEventListener('scroll', handleNavLogoScroll);
+            // Initial check
+            handleNavLogoScroll();
         });
     </script>
 

@@ -55,12 +55,51 @@ body {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.nav-logo {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    width: 0;
+    overflow: visible;
+    position: relative;
+    z-index: 1001;
+}
+
+.nav-logo.visible {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    width: auto;
+    margin-right: 15px;
+}
+
+.nav-logo-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #C96654;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.nav-logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
+    margin: -8px 0;
 }
 
 .nav-links {
     display: flex;
     gap: 15px;
-    flex: 1;    position: relative;
+    flex: 1;
+    position: relative;
+    transition: all 0.3s ease;
+    justify-content: flex-start;
 }
 
 .nav-slider {
