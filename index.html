@@ -65,6 +65,7 @@
     <link rel="shortcut icon" href="oliva_favicon/favicon.ico">
     <meta name="theme-color" content="#ffffff">
 </head>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5YRF6W1TBZ"></script>
 <script>
@@ -74,319 +75,265 @@
 
   gtag('config', 'G-5YRF6W1TBZ');
 </script>
+
 <body>
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#" class="nav-link active" onclick="showPage('index', this)">Portfolio</a>
+                <a href="#" class="nav-link" onclick="showPage('about', this)">About</a>
+                <a href="#" class="nav-link" onclick="showPage('contact', this)">Contact</a>
+            </div>
+            <div class="nav-social">
+                <a href="https://www.instagram.com/olivahomestaging/" class="nav-social-link" target="_blank" rel="noopener noreferrer">
+                    <img src="https://github.com/Antonomy/emailsignature/blob/main/instagram-icon.png?raw=true" 
+                         alt="Oliva Instagram" class="nav-social-icon">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61586034364471" class="nav-social-link" target="_blank" rel="noopener noreferrer">
+                    <img src="https://github.com/Antonomy/emailsignature/blob/main/facebook-icon.png?raw=true" 
+                         alt="Oliva Facebook" class="nav-social-icon">
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Header Container -->
     <header class="header-container">
-        <h1 class="visually-hidden">Best Affordable Home Staging in Los Angeles and Pasadena</h1>
-        <img src="olivalogowhite.png" alt="Oliva Home Staging - Best Affordable Home Staging Services Los Angeles Pasadena Fast Professional" class="logo">
+        <h1 class="visually-hidden page-title">Best Affordable Home Staging in Los Angeles and Pasadena</h1>
+        <img src="olivalogowhite.png" alt="Oliva Home Staging - Professional Home Staging Services Los Angeles Pasadena" class="logo">
     </header>
-    
-    <!-- SEO Content Container -->
-    <section class="seo-content-container visually-hidden">
-        <h2>Fast, Affordable Home Staging Services</h2>
-        <p>Oliva Home Staging provides the best, most affordable home staging services in Los Angeles and Pasadena. Our fast, professional staging transforms your property with a flat investment that includes 3 months of service, complete design, staging, and move-out assistance. We offer the cheapest rates without compromising quality.</p>
-        <p>Serving Los Angeles, Pasadena, and surrounding areas with fast turnaround times and affordable pricing.</p>
-    </section>
-    
-    <!-- Service Equation Container -->
-    <section class="equation-container" role="main" aria-label="Home Staging Service Package">
-        <!-- Investment Item - Pig Icon -->
-        <div class="equation-item">
-            <img src="equation_graphic_icons/pig-icon.svg" alt="Affordable Home Staging Flat Rate Investment" class="equation-icon">
-            <div class="equation-text">
-              <div class="equation-number">1</div>  
-              <div class="equation-title">Flat</div>
-                <div class="equation-title">Investment</div>
+
+    <!-- Main Content Container -->
+    <main id="main-content">
+        <!-- Page-specific content will be inserted here -->
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-navigation">
+        <div class="bottom-nav-container">
+            <div class="bottom-nav-contact">
+                <span>contact@olivahomestaging.com</span>
+            </div>
+            <div class="bottom-nav-social">
+                <a href="https://www.instagram.com/olivahomestaging/" class="bottom-nav-social-link" target="_blank" rel="noopener noreferrer">
+                    <img src="https://github.com/Antonomy/emailsignature/blob/main/instagram-icon.png?raw=true" 
+                         alt="Oliva Instagram" class="bottom-nav-social-icon">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61586034364471" class="bottom-nav-social-link" target="_blank" rel="noopener noreferrer">
+                    <img src="https://github.com/Antonomy/emailsignature/blob/main/facebook-icon.png?raw=true" 
+                         alt="Oliva Facebook" class="bottom-nav-social-icon">
+                </a>
             </div>
         </div>
-        
-        <div class="equation-operator">=</div>
-        
-        <!-- Duration Item - Calendar Icon -->
-        <div class="equation-item">
-            <img src="equation_graphic_icons/calendar-icon.svg" alt="3 Months Home Staging Service Included" class="equation-icon">
-            <div class="equation-text">
-                <div class="equation-number">3</div>
-                <div class="equation-title">Months</div>
-                <div class="equation-title">Included</div>
-            </div>
-        </div>
-        
-        <div class="equation-operator">+</div>
-        
-        <!-- Design Item - Plan Icon -->
-        <div class="equation-item">
-            <img src="equation_graphic_icons/plan-icon.svg" alt="Professional Home Staging Design Los Angeles" class="equation-icon">
-            <div class="equation-text">
-                <div class="equation-title">Design</div>
-            </div>
-        </div>
-        
-        <div class="equation-operator">+</div>
-        
-        <!-- Staging Item - Bedroom Icon -->
-        <div class="equation-item">
-            <img src="equation_graphic_icons/bedroom-icon.svg" alt="Fast Home Staging Setup Pasadena" class="equation-icon">
-            <div class="equation-text">
-                <div class="equation-title">Stage</div>
-            </div>
-        </div>
-        
-        <div class="equation-operator">+</div>
-        
-        <!-- Move Out Item - Truck Icon -->
-        <div class="equation-item">
-            <img src="equation_graphic_icons/truck-icon.svg" alt="Home Staging Move Out Service" class="equation-icon">
-            <div class="equation-text">
-                <div class="equation-title">Move out</div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Photo Showcase Container -->
-    <section class="carousel-container-section" role="complementary" aria-label="Home Staging Portfolio">
-        <h2 class="showcase-title">Our Staging</h2>
-        <div class="carousel-container">
-            <button class="carousel-btn carousel-btn-prev" aria-label="Previous photo" onclick="changePhoto(-1)">‹</button>
-            <div class="carousel-wrapper">
-                <div class="carousel-track" id="carouselTrack">
-                    <!-- Carousel slides will be dynamically generated by JavaScript -->
-                </div>
-            </div>
-            <button class="carousel-btn carousel-btn-next" aria-label="Next photo" onclick="changePhoto(1)">›</button>
-        </div>
-        <!-- Carousel Navigation Indicators -->
-        <div class="carousel-indicators" id="carouselIndicators">
-            <!-- Indicators will be dynamically generated by JavaScript -->
-        </div>
-    </section>
-    
-    <!-- Social Media Container -->
-    <div class="socials-container">
-        <!-- Instagram Link -->
-        <a href="https://www.instagram.com/olivahomestaging/" class="social-link" target="_blank" rel="noopener noreferrer">
-            <img src="https://github.com/Antonomy/emailsignature/blob/main/instagram-icon.png?raw=true" 
-                 alt="Oliva Instagram" class="social-icon">
-        </a>
-        <!-- Facebook Link -->
-        <a href="https://www.facebook.com/profile.php?id=61586034364471" class="social-link" target="_blank" rel="noopener noreferrer">
-            <img src="https://github.com/Antonomy/emailsignature/blob/main/facebook-icon.png?raw=true" 
-                 alt="Oliva Facebook" class="social-icon">
-        </a>
-    </div>
-    
-    <!-- Footer Container -->
-    <footer class="footer-container">
-        <!-- Contact Information -->
-        <address class="contact" itemscope itemtype="https://schema.org/LocalBusiness">
-            <span class="visually-hidden">Contact Oliva Home Staging for fast, affordable home staging in Los Angeles and Pasadena:</span>
-            <span itemprop="email">contact@olivahomestaging.com</span>
-        </address>
-    </footer>
-    
-    <!-- Carousel JavaScript -->
+    </nav>
+
     <script>
-        // Photo data grouped by address
-        const photosByAddress = {
-            '270palisades': [
-                { src: 'carousel_photos/270palisades_living.jpg', alt: 'Professional Home Staging - Palisades Living Room Design' }
-            ],
-            '2298midwick': [
-                { src: 'carousel_photos/2298midwick_living.jpeg', alt: 'Professional Home Staging - Midwick Living Room Design' },
-                { src: 'carousel_photos/2298midwick_dining.jpeg', alt: 'Modern Home Staging - Midwick Dining Area' },
-                { src: 'carousel_photos/2298midwick_bed.jpeg', alt: 'Elegant Home Staging - Midwick Bedroom Suite' },
-                { src: 'carousel_photos/2298midwick_patio.jpeg', alt: 'Beautiful Home Staging - Midwick Patio and Outdoor Space' }
-            ],
-            '2308Galbreth': [
-                { src: 'carousel_photos/2308Galbreth_Living1.jpg', alt: 'Elegant Home Staging - Galbreth Living Room' },
-                { src: 'carousel_photos/2308Galbreth_Living2.jpg', alt: 'Modern Home Staging - Galbreth Living Area' },
-                { src: 'carousel_photos/2308Galbreth_Living3.jpg', alt: 'Professional Home Staging - Galbreth Living Space' },
-                { src: 'carousel_photos/2308Galbreth_living.jpg', alt: 'Beautiful Home Staging - Galbreth Living Room View' },
-                { src: 'carousel_photos/2308Galbreth_Dining.jpg', alt: 'Elegant Home Staging - Galbreth Dining Room' },
-                { src: 'carousel_photos/2308Galbreth_Dining (1).jpg', alt: 'Modern Home Staging - Galbreth Dining Area View 1' },
-                { src: 'carousel_photos/2308Galbreth_Dining (2).jpg', alt: 'Professional Home Staging - Galbreth Dining Area View 2' },
-                { src: 'carousel_photos/2308Galbreth_dining2.jpg', alt: 'Beautiful Home Staging - Galbreth Dining Space' },
-                { src: 'carousel_photos/2308Galbreth_Kitchen1.jpg', alt: 'Modern Home Staging - Galbreth Kitchen Design' },
-                { src: 'carousel_photos/2308Galbreth_Kitchen2.jpg', alt: 'Professional Home Staging - Galbreth Kitchen View 2' },
-                { src: 'carousel_photos/2308Galbreth_Kitchen3.jpg', alt: 'Elegant Home Staging - Galbreth Kitchen View 3' },
-                { src: 'carousel_photos/2308Galbreth_Kitchen4.jpg', alt: 'Beautiful Home Staging - Galbreth Kitchen View 4' },
-                { src: 'carousel_photos/2308Galbreth_Kitchen5.jpg', alt: 'Modern Home Staging - Galbreth Kitchen View 5' },
-                { src: 'carousel_photos/2308Galbreth_Kitchen6.jpg', alt: 'Professional Home Staging - Galbreth Kitchen View 6' },
-                { src: 'carousel_photos/2308Galbreth_Family1.jpg', alt: 'Elegant Home Staging - Galbreth Family Room' },
-                { src: 'carousel_photos/2308Galbreth_Family2.jpg', alt: 'Beautiful Home Staging - Galbreth Family Area View 2' },
-                { src: 'carousel_photos/2308Galbreth_Family3.jpg', alt: 'Modern Home Staging - Galbreth Family Space View 3' }
-            ]
+        // Page content definitions
+        const pageContent = {
+            index: {
+                title: 'Best Affordable Home Staging in Los Angeles and Pasadena',
+                content: `
+                    <!-- SEO Content Container -->
+                    <section class="seo-content-container visually-hidden">
+                        <h2>Fast, Affordable Home Staging Services</h2>
+                        <p>Oliva Home Staging provides the best, most affordable home staging services in Los Angeles and Pasadena. Our fast, professional staging transforms your property with a flat investment that includes 3 months of service, complete design, staging, and move-out. We offer some of the best rates without compromising quality.</p>
+                        <p>Serving Los Angeles, Pasadena, and surrounding areas with fast turnaround times and affordable pricing.</p>
+                    </section>
+                    
+                    <!-- Portfolio Section -->
+                    <section class="portfolio-section">
+                        <!-- Service Equation Container -->
+                        <section class="equation-container" role="main" aria-label="Home Staging Service Package">
+                        <!-- Investment Item - Pig Icon -->
+                        <div class="equation-item">
+                            <img src="equation_graphic_icons/pig-icon.svg" alt="Affordable Home Staging Flat Rate Investment" class="equation-icon">
+                            <div class="equation-text">
+                              <div class="equation-number">1</div>  
+                              <div class="equation-title">Flat</div>
+                                <div class="equation-title">Investment</div>
+                            </div>
+                        </div>
+                        
+                        <div class="equation-operator">=</div>
+                        
+                        <!-- Duration Item - Calendar Icon -->
+                        <div class="equation-item">
+                            <img src="equation_graphic_icons/calendar-icon.svg" alt="3 Months Home Staging Service Included" class="equation-icon">
+                            <div class="equation-text">
+                                <div class="equation-number">3</div>
+                                <div class="equation-title">Months</div>
+                                <div class="equation-title">Included</div>
+                            </div>
+                        </div>
+                        
+                        <div class="equation-operator">+</div>
+                        
+                        <!-- Design Item - Plan Icon -->
+                        <div class="equation-item">
+                            <img src="equation_graphic_icons/plan-icon.svg" alt="Professional Home Staging Design Los Angeles" class="equation-icon">
+                            <div class="equation-text">
+                                <div class="equation-title">Design</div>
+                            </div>
+                        </div>
+                        
+                        <div class="equation-operator">+</div>
+                        
+                        <!-- Staging Item - Bedroom Icon -->
+                        <div class="equation-item">
+                            <img src="equation_graphic_icons/bedroom-icon.svg" alt="Fast Home Staging Setup Pasadena" class="equation-icon">
+                            <div class="equation-text">
+                                <div class="equation-title">Stage</div>
+                            </div>
+                        </div>
+                        
+                        <div class="equation-operator">+</div>
+                        
+                        <!-- Move Out Item - Truck Icon -->
+                        <div class="equation-item">
+                            <img src="equation_graphic_icons/truck-icon.svg" alt="Home Staging Move Out Service" class="equation-icon">
+                            <div class="equation-text">
+                                <div class="equation-title">Move out</div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Photo Showcase Container -->
+                    <section id="portfolio" class="carousel-container-section" role="complementary" aria-label="Home Staging Portfolio">
+                        <h2 class="showcase-title">Portfolio</h2>
+                        <div class="carousel-container">
+                            <button class="carousel-btn carousel-btn-prev" aria-label="Previous photo" onclick="changePhoto(-1)">‹</button>
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track" id="carouselTrack">
+                                    <!-- Carousel slides will be dynamically generated by JavaScript -->
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-next" aria-label="Next photo" onclick="changePhoto(1)">›</button>
+                        </div>
+                        <!-- Carousel Navigation Indicators -->
+                        <div class="carousel-indicators" id="carouselIndicators">
+                            <!-- Indicators will be dynamically generated by JavaScript -->
+                        </div>
+                    </section>
+                    </section>
+                `
+            },
+            about: {
+                title: 'About Oliva Home Staging - Professional Home Staging in Los Angeles and Pasadena',
+                content: `
+                    <!-- About Section -->
+                    <section class="about-section">
+                        <div class="about-content">
+                            <h2 class="section-title">About Oliva Home Staging</h2>
+                            <div class="about-text">
+                                <p>Oliva Home Staging provides the best, most affordable home staging services in Los Angeles and Pasadena. Our fast, professional staging transforms your property with a flat investment that includes 3 months of service, complete design, staging, and move-out.</p>
+                                <p>We offer some of the best rates without compromising quality, serving Los Angeles, Pasadena, and surrounding areas with fast turnaround times and affordable pricing.</p>
+                                <p>Our experienced team understands the local real estate market and knows exactly what buyers are looking for. We work quickly and efficiently to stage your property, helping it sell faster and for the best possible price.</p>
+                                <p>With our flat-rate pricing model, you know exactly what you'll pay upfront - no hidden fees, no hourly charges, just professional staging that gets results.</p>
+                            </div>
+                        </div>
+                    </section>
+                `
+            },
+            contact: {
+                title: 'Contact Oliva Home Staging - Professional Home Staging in Los Angeles and Pasadena',
+                content: `
+                    <!-- Contact Section -->
+                    <section class="contact-section">
+                        <div class="contact-content">
+                            <h2 class="section-title">Get In Touch</h2>
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <h3>Email Us</h3>
+                                    <address class="contact-address" itemscope itemtype="https://schema.org/LocalBusiness">
+                                        <span itemprop="email">contact@olivahomestaging.com</span>
+                                    </address>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <h3>Service Areas</h3>
+                                    <p>Los Angeles, Pasadena, and surrounding areas</p>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <h3>What We Offer</h3>
+                                    <ul class="service-list">
+                                        <li>Flat-rate investment pricing</li>
+                                        <li>3 months included</li>
+                                        <li>Complete design service</li>
+                                        <li>Professional staging</li>
+                                        <li>Move-out</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <h3>Follow Us</h3>
+                                    <div class="contact-social-media">
+                                        <a href="https://www.instagram.com/olivahomestaging/" class="contact-social-link" target="_blank" rel="noopener noreferrer">
+                                            <img src="https://github.com/Antonomy/emailsignature/blob/main/instagram-icon.png?raw=true" 
+                                                 alt="Oliva Instagram" class="contact-social-icon">
+                                            <span>@olivahomestaging</span>
+                                        </a>
+                                        <a href="https://www.facebook.com/profile.php?id=61586034364471" class="contact-social-link" target="_blank" rel="noopener noreferrer">
+                                            <img src="https://github.com/Antonomy/emailsignature/blob/main/facebook-icon.png?raw=true" 
+                                                 alt="Oliva Facebook" class="contact-social-icon">
+                                            <span>Oliva Home Staging</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                `
+            }
         };
 
-        // Shuffle array function using Fisher-Yates algorithm
-        function shuffleArray(array) {
-            const shuffled = [...array];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
-            return shuffled;
-        }
-
-        // Create carousel slides based on address grouping
-        function createCarouselSlides() {
-            const carouselTrack = document.getElementById('carouselTrack');
-            const addresses = Object.keys(photosByAddress);
-            const shuffledAddresses = shuffleArray(addresses);
-            let slideIndex = 0;
+        // Page navigation function
+        function showPage(pageName, clickedLink) {
+            // Update page content
+            const mainContent = document.getElementById('main-content');
+            const pageData = pageContent[pageName];
             
-            shuffledAddresses.forEach((address) => {
-                const photos = shuffleArray(photosByAddress[address]); // Randomize photos within each address
+            if (pageData) {
+                mainContent.innerHTML = pageData.content;
+                document.querySelector('.page-title').textContent = pageData.title;
                 
-                if (photos.length === 1) {
-                    // Single photo display
-                    const slide = document.createElement('div');
-                    slide.className = slideIndex === 0 ? 'carousel-slide active' : 'carousel-slide';
-                    slide.innerHTML = `
-                        <img src="${photos[0].src}" alt="${photos[0].alt}" class="carousel-image single-photo" loading="lazy">
-                    `;
-                    carouselTrack.appendChild(slide);
-                    slideIndex++;
+                // Update body classes
+                document.body.className = '';
+                if (pageName === 'index') {
+                    document.body.classList.add('portfolio-page');
                 } else {
-                    // Multiple slides with 2x2 grids (4 photos per slide)
-                    for (let i = 0; i < photos.length; i += 4) {
-                        const slidePhotos = photos.slice(i, i + 4);
-                        const slide = document.createElement('div');
-                        slide.className = slideIndex === 0 ? 'carousel-slide active' : 'carousel-slide';
-                        
-                        if (slidePhotos.length === 4) {
-                            // Full 2x2 grid
-                            slide.innerHTML = `
-                                <div class="photo-grid">
-                                    ${slidePhotos.map(photo => `
-                                        <img src="${photo.src}" alt="${photo.alt}" class="grid-image" loading="lazy">
-                                    `).join('')}
-                                </div>
-                            `;
-                        } else {
-                            // Partial grid for remaining photos
-                            slide.innerHTML = `
-                                <div class="photo-grid partial-grid-${slidePhotos.length}">
-                                    ${slidePhotos.map(photo => `
-                                        <img src="${photo.src}" alt="${photo.alt}" class="grid-image" loading="lazy">
-                                    `).join('')}
-                                </div>
-                            `;
-                        }
-                        
-                        carouselTrack.appendChild(slide);
-                        slideIndex++;
-                    }
+                    document.body.classList.add(pageName + '-page');
                 }
-            });
-        }
-
-        // Create navigation indicators
-        function createIndicators() {
-            const indicatorContainer = document.getElementById('carouselIndicators');
-            let totalSlides = 0;
-            
-            // Calculate total number of slides
-            Object.values(photosByAddress).forEach(photos => {
-                if (photos.length === 1) {
-                    totalSlides += 1;
-                } else {
-                    totalSlides += Math.ceil(photos.length / 4);
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                clickedLink.classList.add('active');
+                
+                // Initialize page-specific features
+                if (pageName === 'index') {
+                    initializeCarousel();
                 }
-            });
-            
-            for (let i = 0; i < totalSlides; i++) {
-                const indicator = document.createElement('button');
-                indicator.className = i === 0 ? 'indicator active' : 'indicator';
-                indicator.onclick = () => goToSlide(i);
-                indicator.setAttribute('aria-label', `Go to slide ${i + 1}`);
-                indicatorContainer.appendChild(indicator);
             }
         }
 
-        // Initialize carousel after DOM is loaded
+        // Initialize with portfolio page
         document.addEventListener('DOMContentLoaded', function() {
-            createCarouselSlides();
-            createIndicators();
-            initializeCarousel();
+            showPage('index', document.querySelector('.nav-link'));
         });
+    </script>
 
-        // Carousel State Management
-        let currentSlide = 0;
-        let slides, indicators, totalSlides;
-
+    <!-- Carousel JavaScript -->
+    <script src="js/carousel.js"></script>
+    <script>
         function initializeCarousel() {
-            slides = document.querySelectorAll('.carousel-slide');
-            indicators = document.querySelectorAll('.indicator');
-            totalSlides = slides.length;
-        }
-        
-        // Show specific slide function
-        function showSlide(index) {
-            // Remove active class from all slides and indicators
-            slides.forEach(slide => slide.classList.remove('active'));
-            indicators.forEach(indicator => indicator.classList.remove('active'));
-            
-            // Add active class to current slide and indicator
-            slides[index].classList.add('active');
-            indicators[index].classList.add('active');
-        }
-        
-        // Navigate between photos
-        function changePhoto(direction) {
-            currentSlide += direction;
-            
-            if (currentSlide >= totalSlides) {
-                currentSlide = 0;
-            } else if (currentSlide < 0) {
-                currentSlide = totalSlides - 1;
+            if (window.portfolioCarousel) {
+                window.portfolioCarousel.destroy();
             }
-            
-            showSlide(currentSlide);
-        }
-        
-        // Go to specific slide
-        function goToSlide(index) {
-            currentSlide = index;
-            showSlide(currentSlide);
-        }
-        
-        // Auto-advance carousel every 5 seconds
-        setInterval(() => {
-            if (slides && slides.length > 0) {
-                changePhoto(1);
-            }
-        }, 5000);
-        
-        // Touch/swipe support for mobile devices
-        let startX = 0;
-        let endX = 0;
-        
-        const carousel = document.querySelector('.carousel-wrapper');
-        
-        // Handle touch start
-        carousel.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
-        
-        // Handle touch end and determine swipe direction
-        carousel.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        });
-        
-        // Process swipe gesture
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = startX - endX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    changePhoto(1); // Swipe left - next photo
-                } else {
-                    changePhoto(-1); // Swipe right - previous photo
-                }
-            }
+            setTimeout(() => {
+                window.portfolioCarousel = new PortfolioCarousel();
+                window.portfolioCarousel.init();
+            }, 100);
         }
     </script>
 </body>
