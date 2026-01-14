@@ -359,12 +359,15 @@
             
             if (navLogo && headerContainer) {
                 const headerRect = headerContainer.getBoundingClientRect();
-                const isHeaderVisible = headerRect.bottom > 0;
+                const navRect = document.querySelector('.navigation').getBoundingClientRect();
                 
-                if (isHeaderVisible) {
-                    navLogo.classList.remove('visible');
-                } else {
+                // Check if header is mostly hidden (less than 20% visible)
+                const isHeaderMostlyHidden = headerRect.bottom <= navRect.bottom + 10;
+                
+                if (isHeaderMostlyHidden) {
                     navLogo.classList.add('visible');
+                } else {
+                    navLogo.classList.remove('visible');
                 }
             }
         }

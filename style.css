@@ -177,8 +177,8 @@ body {
 }
 
 .logo {
-    max-width: 80%;
-    max-height: 200px;
+    max-width: 60%;
+    max-height: 150px;
     width: auto;
     height: auto;
     display: block;
@@ -636,6 +636,26 @@ section {
         gap: 0px;
     }
     
+    /* Mobile nav logo adjustments */
+    .nav-logo {
+        display: block !important;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    
+    .nav-logo.visible {
+        opacity: 1 !important;
+        transform: scale(1);
+        margin-right: 10px;
+    }
+    
+    .nav-logo-img {
+        height: 36px;
+        width: auto;
+        margin: -6px 0;
+    }
+    
     /* Main content adjustments */
     #main-content {
         padding: 0 15px;
@@ -776,6 +796,16 @@ section {
     /* Extra small screen adjustments */
     .nav-links {
         gap: 0px;
+    }
+    
+    /* Mobile nav logo for small screens */
+    .nav-logo-img {
+        height: 32px;
+        margin: -4px 0;
+    }
+    
+    .navigation {
+        padding: 8px 12px;
     }
     
     .nav-link {
