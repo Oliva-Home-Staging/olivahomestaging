@@ -81,6 +81,7 @@
     <nav class="navigation">
         <div class="nav-container">
             <div class="nav-links">
+                <div class="nav-slider"></div>
                 <a href="#" class="nav-link active" onclick="showPage('index', this)">Portfolio</a>
                 <a href="#" class="nav-link" onclick="showPage('about', this)">About</a>
                 <a href="#" class="nav-link" onclick="showPage('contact', this)">Contact</a>
@@ -246,7 +247,12 @@
                                 <div class="contact-item">
                                     <h3>Email Us</h3>
                                     <address class="contact-address" itemscope itemtype="https://schema.org/LocalBusiness">
-                                        <span itemprop="email">contact@olivahomestaging.com</span>
+                                        <span class="email-with-icon">
+                                            <svg class="email-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4 7L10.94 11.94C11.59 12.37 12.41 12.37 13.06 11.94L20 7M4 6H20C21.1 6 22 6.9 22 8V16C22 17.1 21.1 18 20 18H4C2.9 18 2 17.1 2 16V8C2 6.9 2.9 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <span itemprop="email">contact@olivahomestaging.com</span>
+                                        </span>
                                     </address>
                                 </div>
                                 
@@ -306,9 +312,10 @@
                     document.body.classList.add(pageName + '-page');
                 }
                 
-                // Update active nav link
+                // Update active nav link and animate slider
                 document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
                 clickedLink.classList.add('active');
+                animateNavSlider(clickedLink);
                 
                 // Initialize page-specific features
                 if (pageName === 'index') {
@@ -317,9 +324,36 @@
             }
         }
 
+        // Animate navigation slider
+        function animateNavSlider(activeLink) {
+            const slider = document.querySelector('.nav-slider');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (slider && activeLink) {
+                const linkRect = activeLink.getBoundingClientRect();
+                const navRect = navLinks.getBoundingClientRect();
+                
+                const offsetLeft = linkRect.left - navRect.left;
+                const width = linkRect.width;
+                
+                slider.style.left = offsetLeft + 'px';
+                slider.style.width = width + 'px';
+            }
+        }
+
+        // Initialize slider position
+        function initializeNavSlider() {
+            const activeLink = document.querySelector('.nav-link.active');
+            if (activeLink) {
+                animateNavSlider(activeLink);
+            }
+        }
+
         // Initialize with portfolio page
         document.addEventListener('DOMContentLoaded', function() {
             showPage('index', document.querySelector('.nav-link'));
+            // Initialize slider position after a short delay to ensure layout is ready
+            setTimeout(initializeNavSlider, 100);
         });
     </script>
 

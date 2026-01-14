@@ -60,8 +60,19 @@ body {
 .nav-links {
     display: flex;
     gap: 15px;
-    flex: 1;
+    flex: 1;    position: relative;
 }
+
+.nav-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #5a6b5d;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    z-index: 1;
+    pointer-events: none;}
 
 .nav-social {
     display: flex;
@@ -77,16 +88,24 @@ body {
     font-size: 14px;
     padding: 6px 12px;
     border-radius: 20px;
+    border: 2px solid transparent;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     white-space: nowrap;
+    position: relative;
+    z-index: 2;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+    border: 2px solid #5a6b5d;
+    transform: scale(1.05);
+}
+
 .nav-link.active {
-    background: #5a6b5d;
     color: white;
+    border: 2px solid transparent;
+    transform: scale(1.05);
 }
 
 .nav-social-link {
@@ -103,7 +122,6 @@ body {
 .nav-social-icon {
     width: 18px;
     height: 18px;
-    opacity: 0.7;
 }
 
 .nav-social-icon:hover {
@@ -170,7 +188,7 @@ section {
 .contact-content {
     max-width: 800px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
 
 .section-title {
@@ -185,6 +203,7 @@ section {
     line-height: 1.25;
     color: #666;
     margin-bottom: 15px;
+    text-indent: 1.5em;
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -203,6 +222,26 @@ section {
 
 .contact-address {
     font-style: normal;
+}
+
+.email-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+    cursor: pointer;
+}
+
+.email-with-icon:hover {
+    transform: scale(1.1);
+}
+
+.email-icon {
+    width: 18px;
+    height: 18px;
+    opacity: 0.7;
+    color: #666;
 }
 
 .service-list {
@@ -227,11 +266,11 @@ section {
     gap: 8px;
     text-decoration: none;
     color: #5a6b5d;
-    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .contact-social-link:hover {
-    opacity: 0.7;
+    transform: scale(1.1);
 }
 
 .contact-social-icon {
@@ -300,7 +339,7 @@ section {
     background-color: #5a6b5d;
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    border: 3px solid #C96654;
+    border: 3px solid #36454f;
     padding: 20px 15px 15px 15px;
 }
 
@@ -512,6 +551,12 @@ section {
     color: #5a6b5d;
     font-size: 13px;
     font-weight: bold;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.bottom-nav-contact:hover {
+    transform: scale(1.1);
 }
 
 .bottom-nav-social {
@@ -534,7 +579,6 @@ section {
 .bottom-nav-social-icon {
     width: 18px;
     height: 18px;
-    opacity: 0.7;
 }
 
 .bottom-nav-social-icon:hover {
