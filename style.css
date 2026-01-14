@@ -115,7 +115,7 @@ body {
     width: 100%;
     max-width: 900px;
     text-align: center;
-    padding: 8px 20px;
+    padding: 0;
     flex-shrink: 0;
 }
 
@@ -135,7 +135,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3px;
+    gap: 0px;
     padding: 0 20px;
     flex-grow: 1;
 }
@@ -149,9 +149,10 @@ section {
 .portfolio-section,
 .about-section,
 .contact-section {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     padding: 30px 20px;
-    margin: 5px 0;
+    margin: 0;
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     width: 100%;
@@ -181,7 +182,7 @@ section {
 
 .about-text p {
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.25;
     color: #666;
     margin-bottom: 15px;
 }
@@ -502,7 +503,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 15px;
+    padding: 12px 20px;
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
@@ -548,6 +549,11 @@ section {
         padding-bottom: 120px !important;
     }
     
+    /* Navigation adjustments */
+    .nav-links {
+        gap: 0px;
+    }
+    
     /* Main content adjustments */
     #main-content {
         padding: 0 15px;
@@ -558,7 +564,7 @@ section {
     .about-section,
     .contact-section {
         padding: 20px 15px;
-        margin: 8px 0;
+        margin: 2px 0;
     }
     
     /* Equation container adjustments */
@@ -602,7 +608,7 @@ section {
     
     /* Bottom nav adjustments */
     .bottom-nav-container {
-        padding: 10px 12px;
+        padding: 10px 20px;
     }
     
     .bottom-nav-contact {
@@ -687,7 +693,7 @@ section {
 @media (max-width: 375px) {
     /* Extra small screen adjustments */
     .nav-links {
-        gap: 8px;
+        gap: 0px;
     }
     
     .nav-link {
