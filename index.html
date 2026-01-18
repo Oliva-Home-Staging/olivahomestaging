@@ -85,9 +85,9 @@
             </div>
             <div class="nav-links">
                 <div class="nav-slider"></div>
-                <a href="#" class="nav-link active" onclick="showPage('index', this)">Portfolio</a>
-                <a href="#" class="nav-link" onclick="showPage('about', this)">About</a>
-                <a href="#" class="nav-link" onclick="showPage('contact', this)">Contact</a>
+                <a href="#" class="nav-link active" onclick="showPage('index', this); return false;">Portfolio</a>
+                <a href="#about" class="nav-link" onclick="showPage('about', this); return false;">About</a>
+                <a href="#contact" class="nav-link" onclick="showPage('contact', this); return false;">Contact</a>
             </div>
             <div class="nav-social">
                 <a href="https://www.instagram.com/olivahomestaging/" class="nav-social-link" target="_blank" rel="noopener noreferrer">
@@ -298,7 +298,7 @@
         };
 
         // Page navigation function
-        function showPage(pageName, clickedLink) {
+        function showPage(pageName, clickedLink, shouldAnimate = true) {
             // Update page content
             const mainContent = document.getElementById('main-content');
             const pageData = pageContent[pageName];
@@ -306,6 +306,17 @@
             if (pageData) {
                 mainContent.innerHTML = pageData.content;
                 document.querySelector('.page-title').textContent = pageData.title;
+                
+                // Update URL hash
+                if (pageName === 'index') {
+                    // Clear the hash for the portfolio page
+                    if (window.location.hash) {
+                        history.replaceState(null, null, window.location.pathname);
+                    }
+                } else {
+                    // Set the hash for other pages
+                    history.replaceState(null, null, '#' + pageName);
+                }
                 
                 // Update body classes
                 document.body.className = '';
@@ -315,10 +326,18 @@
                     document.body.classList.add(pageName + '-page');
                 }
                 
-                // Update active nav link and animate slider
-                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-                clickedLink.classList.add('active');
-                animateNavSlider(clickedLink);
+                // Update active nav link and animate slider (only if not already active)
+                if (!clickedLink.classList.contains('active')) {
+                    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                    clickedLink.classList.add('active');
+                }
+                
+                if (shouldAnimate) {
+                    animateNavSlider(clickedLink);
+                } else {
+                    // Set slider position immediately without animation
+                    setNavSliderPosition(clickedLink);
+                }
                 
                 // Initialize page-specific features
                 if (pageName === 'index') {
@@ -341,6 +360,31 @@
                 
                 slider.style.left = offsetLeft + 'px';
                 slider.style.width = width + 'px';
+            }
+        }
+
+        // Set navigation slider position immediately (no animation)
+        function setNavSliderPosition(activeLink) {
+            const slider = document.querySelector('.nav-slider');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (slider && activeLink) {
+                // Temporarily disable transitions
+                slider.style.transition = 'none';
+                
+                const linkRect = activeLink.getBoundingClientRect();
+                const navRect = navLinks.getBoundingClientRect();
+                
+                const offsetLeft = linkRect.left - navRect.left;
+                const width = linkRect.width;
+                
+                slider.style.left = offsetLeft + 'px';
+                slider.style.width = width + 'px';
+                
+                // Re-enable transitions after a brief moment
+                setTimeout(() => {
+                    slider.style.transition = '';
+                }, 10);
             }
         }
 
@@ -374,7 +418,47 @@
 
         // Initialize with portfolio page
         document.addEventListener('DOMContentLoaded', function() {
-            showPage('index', document.querySelector('.nav-link'));
+            // Check if there's a hash in the URL to determine initial page
+            let initialPage = 'index';
+            let activeLink = null;
+            
+            const hash = window.location.hash.substring(1);
+            
+            // Get all nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Remove active class from all links first
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            if (hash === 'contact') {
+                initialPage = 'contact';
+                // Find the contact nav link
+                navLinks.forEach(link => {
+                    if (link.textContent.trim() === 'Contact') {
+                        activeLink = link;
+                        link.classList.add('active');
+                    }
+                });
+            } else if (hash === 'about') {
+                initialPage = 'about';
+                // Find the about nav link
+                navLinks.forEach(link => {
+                    if (link.textContent.trim() === 'About') {
+                        activeLink = link;
+                        link.classList.add('active');
+                    }
+                });
+            } else {
+                // Default to portfolio
+                navLinks.forEach(link => {
+                    if (link.textContent.trim() === 'Portfolio') {
+                        activeLink = link;
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            showPage(initialPage, activeLink || navLinks[0], false); // false = no animation on initial load
             // Initialize slider position after a short delay to ensure layout is ready
             setTimeout(initializeNavSlider, 100);
             
