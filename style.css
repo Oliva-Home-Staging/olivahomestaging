@@ -293,6 +293,14 @@ section {
     color: #666;
 }
 
+.contact-item p {
+    color: #666;
+}
+
+span[itemprop="email"] {
+    color: #666;
+}
+
 .contact-social-media {
     display: flex;
     gap: 15px;
