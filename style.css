@@ -2,11 +2,34 @@
    OLIVA HOME STAGING - CLEAN CSS
    =========================================== */
 
+/* Import Montserrat font (modern geometric sans-serif similar to Futura PT) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+    --primary-green: #5a6b5d;
+    --dark-green: #36454f;
+    --white: #fff;
+    --light-gray: rgba(255, 255, 255, 0.95);
+    /* Mobile viewport height fix */
+    --vh: 1vh;
+}
+
 /* Base Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Universal font family for buttons and anchors */
+button, a {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* SEO Hidden Content */
@@ -26,13 +49,93 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #C96654;
-    padding-top: 40px;
-    padding-bottom: 80px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
+    padding: 0;
     overflow-x: hidden;
+}
+
+/* ===== SPLASH SCREEN ===== */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Mobile viewport fix */
+    height: calc(var(--vh, 1vh) * 100); /* Use dynamic viewport height for better mobile support */
+    min-height: 100vh; /* Fallback for older browsers */
+    background-color: #C96654;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: transform 0.8s ease-in-out;
+    /* Mobile Safari specific fixes */
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+}
+
+.splash-screen.hide {
+    transform: translateY(-100%);
+}
+
+.splash-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-logo-img {
+    height: 400px;
+    width: auto;
+    max-height: 70vh;
+    max-width: 90vw;
+    filter: brightness(0) saturate(100%) invert(100%);
+    opacity: 0;
+    animation: fadeInLogo 0.6s ease-in-out 0.2s forwards;
+}
+
+/* Mobile-specific splash screen adjustments */
+@media (max-width: 768px) {
+    .splash-screen {
+        /* Ensure splash screen covers entire mobile screen */
+        height: 100vh;
+        height: 100dvh;
+        /* Fix for iOS Safari viewport issues */
+        min-height: -webkit-fill-available;
+    }
+    
+    .splash-logo-img {
+        height: 300px;
+        max-height: 60vh;
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .splash-logo-img {
+        height: 250px;
+        max-height: 50vh;
+        max-width: 75vw;
+    }
+}
+
+@keyframes fadeInLogo {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hide splash screen after animation */
+.splash-screen.hidden {
+    display: none;
 }
 
 /* ===== NAVIGATION ===== */
@@ -41,7 +144,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: #C96654;
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -51,55 +154,64 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 15px;
+    padding: 4px 15px;
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
     transition: all 0.3s ease;
+    gap: 15px;
 }
 
 .nav-logo {
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-    width: 0;
-    overflow: visible;
-    position: relative;
-    z-index: 1001;
+    display: flex;
+    align-items: center;
 }
 
-.nav-logo.visible {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-    width: auto;
-    margin-right: 15px;
+.nav-logo a {
+    text-decoration: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: inherit;
+    outline: none;
+    box-shadow: none;
 }
 
-.nav-logo-text {
-    font-size: 18px;
-    font-weight: bold;
-    color: #C96654;
-    text-transform: lowercase;
-    letter-spacing: 1px;
-    white-space: nowrap;
+.nav-logo a:hover,
+.nav-logo a:focus,
+.nav-logo a:active,
+.nav-logo a.active {
+    background: none;
+    border: none;
+    transform: none;
+    color: inherit;
+    box-shadow: none;
+    outline: none;
 }
 
 .nav-logo-img {
-    height: 42px;
+    height: 50px;
     width: auto;
     display: block;
+    filter: brightness(0) saturate(100%) invert(100%);
     margin: -8px 0;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .nav-links {
     display: flex;
     gap: 15px;
-    flex: 1;
     position: relative;
     transition: all 0.3s ease;
-    justify-content: flex-start;
+    align-items: center;
 }
 
 .nav-slider {
@@ -111,7 +223,8 @@ body {
     border-radius: 20px;
     transition: all 0.3s ease;
     z-index: 1;
-    pointer-events: none;}
+    pointer-events: none;
+}
 
 .nav-social {
     display: flex;
@@ -121,8 +234,9 @@ body {
 }
 
 .nav-link {
-    color: #5a6b5d;
+    color: white;
     text-decoration: none;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 14px;
     padding: 6px 12px;
@@ -137,7 +251,7 @@ body {
 }
 
 .nav-link:hover {
-    border: 2px solid #5a6b5d;
+    border: 2px solid white;
     transform: scale(1.05);
 }
 
@@ -161,6 +275,7 @@ body {
 .nav-social-icon {
     width: 18px;
     height: 18px;
+    filter: brightness(0) saturate(100%) invert(100%);
 }
 
 .nav-social-icon:hover {
@@ -174,6 +289,17 @@ body {
     text-align: center;
     padding: 0;
     flex-shrink: 0;
+    height: 0;
+}
+
+/* ===== FOOTER ===== */
+.footer-container {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    padding: 0;
+    margin: auto auto 0 auto;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -183,18 +309,39 @@ body {
     height: auto;
     display: block;
     margin: 0 auto;
+    padding: 0;
 }
 
 /* ===== MAIN CONTENT ===== */
-#main-content {
+.body-container {
     width: 100%;
     max-width: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0px;
-    padding: 0 20px;
+    gap: 25px;
+    padding: 60px 20px 0 20px;
     flex-grow: 1;
+    margin: 0 auto;
+}
+
+.page-title-display {
+    color: #5a6b5d;
+    margin: 0;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+}
+
+#main-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding-top: 70px;
 }
 
 /* ===== SECTIONS ===== */
@@ -203,7 +350,6 @@ section {
     scroll-margin-top: 60px;
 }
 
-.portfolio-section,
 .about-section,
 .contact-section {
     background: rgba(255, 255, 255, 0.95);
@@ -216,25 +362,13 @@ section {
     border: 3px solid #5a6b5d;
 }
 
-.portfolio-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-}
+
 
 .about-content,
 .contact-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
-}
-
-.section-title {
-    color: #5a6b5d;
-    margin-bottom: 25px;
-    font-weight: normal;
-    font-size: 24px;
 }
 
 .about-text p {
@@ -257,6 +391,7 @@ section {
 .contact-item h3 {
     color: #5a6b5d;
     margin-bottom: 10px;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 .contact-address {
@@ -291,14 +426,21 @@ section {
 .service-list li {
     margin-bottom: 5px;
     color: #666;
+    font-size: 16px;
+    line-height: 1.25;
 }
 
 .contact-item p {
     color: #666;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-bottom: 15px;
 }
 
 span[itemprop="email"] {
     color: #666;
+    font-size: 16px;
+    line-height: 1.25;
 }
 
 .contact-social-media {
@@ -314,6 +456,8 @@ span[itemprop="email"] {
     text-decoration: none;
     color: #5a6b5d;
     transition: transform 0.3s ease;
+    font-size: 16px;
+    line-height: 1.25;
 }
 
 .contact-social-link:hover {
@@ -380,195 +524,213 @@ span[itemprop="email"] {
     flex-shrink: 0;
 }
 
-/* ===== CAROUSEL ===== */
-.carousel-container-section {
-    width: 100%;
-    background-color: #5a6b5d;
-    border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    border: 3px solid #36454f;
-    padding: 20px 15px 15px 15px;
-}
-
-.showcase-title {
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.carousel-container {
+/* ===== INSTAGRAM FEED ===== */
+.instagram-feed-section {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    width: 100vw !important;
     position: relative;
-    width: 100%;
+    left: 0;
+    right: 0;
+    transform: translateX(calc(-50% + 50vw));
+    box-sizing: border-box;
+    max-width: none !important;
 }
 
-.carousel-wrapper {
+/* Ensure Instagram section uses correct font */
+.instagram-feed-section button,
+.instagram-feed-section a {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.instagram-post {
+    position: relative;
+    aspect-ratio: 1;
     overflow: hidden;
-    border-radius: 10px;
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    aspect-ratio: 0.18 / 1;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    background: #f8f8f8;
 }
 
-.carousel-track {
-    display: block;
-    position: relative;
+.instagram-post:hover {
+    transform: scale(1.02);
+}
+
+.instagram-image {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
 }
 
-.carousel-slide {
+.instagram-post:hover .instagram-image {
+    opacity: 0.8;
+}
+
+.instagram-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.8) 0%, 
+        rgba(0, 0, 0, 0.4) 50%, 
+        transparent 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.3s ease;
 }
 
-.carousel-slide.active {
+.instagram-post:hover .instagram-overlay {
     opacity: 1;
 }
 
-.carousel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border-radius: 10px;
+.instagram-caption {
+    color: white;
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 400;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-/* Single photo display */
-.single-photo {
-    width: 100%;
-    height: 100%;
-}
-
-/* 2x2 Grid layout for multiple photos */
-.photo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 8px;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-    background: white;
-    border-radius: 10px;
-}
-
-/* Partial grids for remaining photos */
-.partial-grid-1 {
+.instagram-load-more {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    padding: 0 20px;
     width: 100%;
-    height: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-    background: white;
-    border-radius: 10px;
 }
 
-.partial-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 8px;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    padding: 5px;
-    box-sizing: border-box;
-    background: white;
-    border-radius: 10px;
-}
-
-.partial-grid-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 8px;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-    background: white;
-    border-radius: 10px;
-}
-
-.partial-grid-3 .grid-image:last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-    max-width: 50%;
-    border-radius: 8px;
-}
-
-.grid-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 8px;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.9);
+.load-more-btn {
+    background: var(--primary-green);
+    color: white;
     border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #5a6b5d;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-btn:hover {
-    background-color: white;
-    transform: translateY(-50%) scale(1.05);
-}
-
-.carousel-btn-prev {
-    left: 5px;
-}
-
-.carousel-btn-next {
-    right: 5px;
-}
-
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 15px;
-}
-
-.indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(90, 107, 93, 0.3);
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(90, 107, 93, 0.2);
 }
 
-.indicator.active,
-.indicator:hover {
-    background-color: #5a6b5d;
-    transform: scale(1.2);
+.load-more-btn:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(90, 107, 93, 0.3);
+}
+
+.instagram-follow {
+    text-align: center;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.follow-instagram-btn {
+    display: inline-block;
+    color: var(--primary-green);
+    text-decoration: none;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid transparent;
+}
+
+.follow-instagram-btn:hover {
+    color: var(--dark-green);
+    border-bottom-color: var(--dark-green);
+    transform: translateY(-1px);
+}
+
+/* Mobile responsiveness for Instagram feed - Mobile First Approach */
+
+/* iPhone and small phones - 1 column */
+@media (max-width: 480px) {
+    .instagram-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 0;
+    }
+    
+    .instagram-overlay {
+        padding: 8px;
+    }
+    
+    .instagram-caption {
+        font-size: 10px;
+        -webkit-line-clamp: 2;
+    }
+    
+    .load-more-btn {
+        padding: 12px 25px;
+        font-size: 13px;
+    }
+}
+
+/* Small tablets - 2 columns */
+@media (min-width: 481px) and (max-width: 768px) {
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0;
+    }
+    
+    .instagram-caption {
+        font-size: 11px;
+        -webkit-line-clamp: 2;
+    }
+    
+    .instagram-overlay {
+        padding: 10px;
+    }
+}
+
+/* Large tablets - 3 columns */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 0;
+    }
+}
+
+/* Desktop - 4 columns */
+@media (min-width: 1025px) {
+    .instagram-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 0;
+    }
 }
 
 /* ===== BOTTOM NAVIGATION ===== */
@@ -633,35 +795,126 @@ span[itemprop="email"] {
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 480px) {
-    /* Body adjustments for mobile footer spacing */
-    body {
-        padding-bottom: 120px !important;
+/* iPhone XR and similar devices (414px) */
+@media (max-width: 414px) and (min-width: 376px) {
+    .nav-container {
+        padding: 2px 10px;
+        gap: 8px;
     }
     
-    /* Navigation adjustments */
-    .nav-links {
-        gap: 0px;
-    }
-    
-    /* Mobile nav logo adjustments */
     .nav-logo {
-        display: block !important;
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    
-    .nav-logo.visible {
-        opacity: 1 !important;
-        transform: scale(1);
-        margin-right: 10px;
+        display: flex !important;
+        align-items: center;
     }
     
     .nav-logo-img {
-        height: 36px;
+        height: 42px;
+        margin: -6px 0;
+    }
+    
+    .nav-links {
+        gap: 6px;
+    }
+    
+    .nav-link {
+        font-size: 11px;
+        padding: 4px 7px;
+    }
+    
+    .nav-social {
+        gap: 5px;
+    }
+    
+    .nav-social-icon {
+        width: 15px;
+        height: 15px;
+    }
+    
+    /* Main content adjustments for iPhone XR */
+    #main-content {
+        padding: 0 12px;
+        padding-top: 65px;
+    }
+    
+    .about-section,
+    .contact-section {
+        padding: 15px 12px;
+        margin: 2px 0;
+    }
+    
+    /* Mobile font sizing for about and contact content */
+    .about-text p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .contact-item h3 {
+        font-size: 16px;
+    }
+    
+    .contact-item p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .service-list li {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    span[itemprop="email"] {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .contact-social-link {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    /* Page title adjustments */
+    .page-title {
+        font-size: 18px;
+        padding: 8px 0;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Navigation adjustments */
+    .nav-container {
+        padding: 3px 12px;
+        gap: 8px;
+    }
+    
+    .nav-links {
+        gap: 6px;
+    }
+    
+    .nav-link {
+        font-size: 11px;
+        padding: 4px 6px;
+    }
+    
+    /* Mobile nav logo adjustments - ensure always visible */
+    .nav-logo {
+        display: flex !important;
+        align-items: center;
+    }
+    
+    .nav-logo-img {
+        height: 38px;
         width: auto;
         margin: -6px 0;
+    }
+    
+    .nav-social {
+        gap: 5px;
+    }
+    
+    .nav-social-icon {
+        width: 15px;
+        height: 15px;
     }
     
     /* Main content adjustments */
@@ -670,11 +923,47 @@ span[itemprop="email"] {
         padding-bottom: 40px;
     }
     
-    .portfolio-section,
     .about-section,
     .contact-section {
         padding: 20px 15px;
         margin: 2px 0;
+    }
+    
+    /* Mobile font sizing for about and contact content */
+    .about-text p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+    
+    .contact-item {
+        margin-bottom: 20px;
+    }
+    
+    .contact-item h3 {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+    
+    .contact-item p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .service-list li {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 4px;
+    }
+    
+    span[itemprop="email"] {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .contact-social-link {
+        font-size: 13px;
+        line-height: 1.5;
     }
     
     /* Equation container adjustments */
@@ -705,17 +994,6 @@ span[itemprop="email"] {
         margin: 0 3px;
     }
     
-    /* Mobile carousel adjustments - give more height */
-    .carousel-container-section {
-        padding: 25px 15px 15px 15px;
-    }
-    
-    .carousel-wrapper {
-        min-height: 300px;
-        aspect-ratio: auto;
-        height: 300px;
-    }
-    
     /* Bottom nav adjustments */
     .bottom-nav-container {
         padding: 10px 20px;
@@ -736,72 +1014,13 @@ span[itemprop="email"] {
     }
 }
 
-/* Tablet and larger phones - Carousel responsive */
-@media (min-width: 400px) {
-    .carousel-container-section {
-        padding: 25px 15px 15px 15px;
-        border-radius: 20px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-    
-    .showcase-title {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-    
-    .carousel-wrapper {
-        border-radius: 12px;
-        aspect-ratio: 1.6 / 1;
-    }
-    
-    .carousel-image {
-        border-radius: 12px;
-    }
-    
-    .carousel-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 22px;
-    }
-    
-    .carousel-btn-prev {
-        left: 15px;
-    }
-    
-    .carousel-btn-next {
-        right: 15px;
-    }
-}
-
-@media (min-width: 600px) {
-    .carousel-container-section {
-        padding: 30px 20px 20px 20px;
-    }
-    
-    .showcase-title {
-        font-size: 22px;
-        margin-bottom: 25px;
-    }
-    
-    .carousel-wrapper {
-        border-radius: 15px;
-        aspect-ratio: 1.4 / 1;
-    }
-    
-    .carousel-image {
-        object-fit: cover;
-        object-position: center;
-        border-radius: 15px;
-    }
-    
-    .indicator {
-        width: 12px;
-        height: 12px;
-    }
-}
-
 @media (max-width: 375px) {
     /* Extra small screen adjustments */
+    .nav-container {
+        padding: 2px 8px;
+        gap: 8px;
+    }
+    
     .nav-links {
         gap: 0px;
     }
@@ -812,13 +1031,14 @@ span[itemprop="email"] {
         margin: -4px 0;
     }
     
-    .navigation {
-        padding: 8px 12px;
-    }
-    
     .nav-link {
         font-size: 11px;
         padding: 3px 6px;
+    }
+    
+    .nav-social-icon {
+        width: 14px;
+        height: 14px;
     }
     
     .equation-container {
