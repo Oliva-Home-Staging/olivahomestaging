@@ -2,6 +2,14 @@
    OLIVA HOME STAGING - CLEAN CSS
    =========================================== */
 
+/* ===== ROOT VARIABLES ===== */
+:root {
+    --primary-green: #5a6b5d;
+    --dark-green: #36454f;
+    --white: #fff;
+    --light-gray: rgba(255, 255, 255, 0.95);
+}
+
 /* Base Reset */
 * {
     margin: 0;
@@ -244,7 +252,6 @@ section {
     scroll-margin-top: 60px;
 }
 
-.portfolio-section,
 .about-section,
 .contact-section {
     background: rgba(255, 255, 255, 0.95);
@@ -257,12 +264,7 @@ section {
     border: 3px solid #5a6b5d;
 }
 
-.portfolio-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-}
+
 
 .about-content,
 .contact-content {
@@ -414,196 +416,7 @@ span[itemprop="email"] {
     flex-shrink: 0;
 }
 
-/* ===== CAROUSEL ===== */
-.carousel-container-section {
-    width: 100%;
-    background-color: #5a6b5d;
-    border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    border: 3px solid #36454f;
-    padding: 20px 15px 15px 15px;
-}
-
-.showcase-title {
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.carousel-container {
-    position: relative;
-    width: 100%;
-}
-
-.carousel-wrapper {
-    overflow: hidden;
-    border-radius: 10px;
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    aspect-ratio: 0.18 / 1;
-}
-
-.carousel-track {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.carousel-slide.active {
-    opacity: 1;
-}
-
-.carousel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border-radius: 10px;
-}
-
-/* Single photo display */
-.single-photo {
-    width: 100%;
-    height: 100%;
-}
-
-/* 2x2 Grid layout for multiple photos */
-.photo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 8px;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-    background: white;
-    border-radius: 10px;
-}
-
-/* Partial grids for remaining photos */
-.partial-grid-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-    background: white;
-    border-radius: 10px;
-}
-
-.partial-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 8px;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    padding: 5px;
-    box-sizing: border-box;
-    background: white;
-    border-radius: 10px;
-}
-
-.partial-grid-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 8px;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-    background: white;
-    border-radius: 10px;
-}
-
-.partial-grid-3 .grid-image:last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-    max-width: 50%;
-    border-radius: 8px;
-}
-
-.grid-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 8px;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #5a6b5d;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-btn:hover {
-    background-color: white;
-    transform: translateY(-50%) scale(1.05);
-}
-
-.carousel-btn-prev {
-    left: 5px;
-}
-
-.carousel-btn-next {
-    right: 5px;
-}
-
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 15px;
-}
-
-.indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(90, 107, 93, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.indicator.active,
-.indicator:hover {
-    background-color: #5a6b5d;
-    transform: scale(1.2);
-}
+/* Portfolio carousel removed for redesign */
 
 /* ===== BOTTOM NAVIGATION ===== */
 .bottom-navigation {
@@ -708,7 +521,6 @@ span[itemprop="email"] {
         padding-top: 65px;
     }
     
-    .portfolio-section,
     .about-section,
     .contact-section {
         padding: 15px 12px;
@@ -771,7 +583,6 @@ span[itemprop="email"] {
         padding-bottom: 40px;
     }
     
-    .portfolio-section,
     .about-section,
     .contact-section {
         padding: 20px 15px;
@@ -806,17 +617,6 @@ span[itemprop="email"] {
         margin: 0 3px;
     }
     
-    /* Mobile carousel adjustments - give more height */
-    .carousel-container-section {
-        padding: 25px 15px 15px 15px;
-    }
-    
-    .carousel-wrapper {
-        min-height: 300px;
-        aspect-ratio: auto;
-        height: 300px;
-    }
-    
     /* Bottom nav adjustments */
     .bottom-nav-container {
         padding: 10px 20px;
@@ -837,68 +637,7 @@ span[itemprop="email"] {
     }
 }
 
-/* Tablet and larger phones - Carousel responsive */
-@media (min-width: 400px) {
-    .carousel-container-section {
-        padding: 25px 15px 15px 15px;
-        border-radius: 20px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-    
-    .showcase-title {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-    
-    .carousel-wrapper {
-        border-radius: 12px;
-        aspect-ratio: 1.6 / 1;
-    }
-    
-    .carousel-image {
-        border-radius: 12px;
-    }
-    
-    .carousel-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 22px;
-    }
-    
-    .carousel-btn-prev {
-        left: 15px;
-    }
-    
-    .carousel-btn-next {
-        right: 15px;
-    }
-}
-
-@media (min-width: 600px) {
-    .carousel-container-section {
-        padding: 30px 20px 20px 20px;
-    }
-    
-    .showcase-title {
-        font-size: 22px;
-        margin-bottom: 25px;
-    }
-    
-    .carousel-wrapper {
-        border-radius: 15px;
-        aspect-ratio: 1.4 / 1;
-    }
-    
-    .carousel-image {
-        object-fit: cover;
-        object-position: center;
-        border-radius: 15px;
-    }
-    
-    .indicator {
-        width: 12px;
-        height: 12px;
-    }
+/* Portfolio carousel removed for redesign */
 }
 
 @media (max-width: 375px) {

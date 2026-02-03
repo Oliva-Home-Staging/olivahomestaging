@@ -59,27 +59,13 @@ class LayoutManager {
     // Update body classes based on page
     updateBodyClasses(pageName) {
         document.body.className = '';
-        if (pageName === 'index') {
-            document.body.classList.add('portfolio-page');
-        } else {
-            document.body.classList.add(`${pageName}-page`);
-        }
+        document.body.classList.add(`${pageName}-page`);
     }
 
     // Handle page-specific JavaScript
     initializePageFeatures(pageName) {
-        // Clean up previous page features
-        if (window.portfolioCarousel) {
-            window.portfolioCarousel.destroy();
-            window.portfolioCarousel = null;
-        }
-
-        // Initialize page-specific features
-        if (pageName === 'index') {
-            // Initialize carousel for portfolio page
-            window.portfolioCarousel = new PortfolioCarousel();
-            window.portfolioCarousel.init();
-        }
+        // Portfolio carousel removed for redesign
+        // No special features needed for current pages
     }
 
     // Navigate to a specific page
