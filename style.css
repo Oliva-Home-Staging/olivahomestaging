@@ -616,9 +616,13 @@ span[itemprop="email"] {
 }
 
 .instagram-load-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin: 20px 0;
     padding: 0 20px;
+    width: 100%;
 }
 
 .load-more-btn {

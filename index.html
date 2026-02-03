@@ -548,21 +548,73 @@
         ];
 
         let displayedPosts = 0;
-        const postsPerLoad = 9;
+
+        // Get initial posts count based on grid layout
+        function getInitialPostsCount() {
+            const width = window.innerWidth;
+            
+            if (width <= 480) {
+                // 1 column: show 10 rows = 10 posts
+                return 10;
+            } else if (width <= 768) {
+                // 2 columns: show 5 rows = 10 posts
+                return 10;
+            } else if (width <= 1024) {
+                // 3 columns: show 4 rows = 12 posts
+                return 12;
+            } else {
+                // 4 columns: show 3 rows = 12 posts
+                return 12;
+            }
+        }
+
+        // Get posts per load based on grid layout (for load more button)
+        function getPostsPerLoad() {
+            const width = window.innerWidth;
+            
+            if (width <= 480) {
+                // 1 column: load 6 more posts
+                return 6;
+            } else if (width <= 768) {
+                // 2 columns: load 6 more posts (3 rows)
+                return 6;
+            } else if (width <= 1024) {
+                // 3 columns: load 6 more posts (2 rows)
+                return 6;
+            } else {
+                // 4 columns: load 8 more posts (2 rows)
+                return 8;
+            }
+        }
 
         // Initialize Instagram feed
         function initInstagramFeed() {
-            loadMorePosts();
+            // Reset displayed posts counter
+            displayedPosts = 0;
+            const grid = document.getElementById('instagramGrid');
+            if (grid) {
+                grid.innerHTML = ''; // Clear existing posts
+            }
+            
+            // Load initial posts based on grid layout
+            const initialCount = getInitialPostsCount();
+            loadPosts(initialCount);
         }
 
         // Load more posts function
         function loadMorePosts() {
+            const postsPerLoad = getPostsPerLoad();
+            loadPosts(postsPerLoad);
+        }
+
+        // Generic load posts function
+        function loadPosts(count) {
             const grid = document.getElementById('instagramGrid');
             const loadMoreBtn = document.getElementById('loadMoreBtn');
             
             if (!grid) return;
 
-            const remainingPosts = instagramPosts.slice(displayedPosts, displayedPosts + postsPerLoad);
+            const remainingPosts = instagramPosts.slice(displayedPosts, displayedPosts + count);
             
             remainingPosts.forEach(post => {
                 const postElement = createInstagramPost(post);
@@ -574,8 +626,16 @@
             // Hide load more button if all posts are displayed
             if (displayedPosts >= instagramPosts.length) {
                 loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'block';
             }
         }
+
+        // Handle window resize to adjust grid if needed
+        window.addEventListener('resize', function() {
+            // Optional: You could reinitialize the grid on resize if needed
+            // initInstagramFeed();
+        });
 
         // Create Instagram post element
         function createInstagramPost(post) {
