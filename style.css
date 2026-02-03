@@ -27,7 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #C96654;
+    background-color: white;
     padding-top: 0;
     padding-bottom: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -41,7 +41,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: #C96654;
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -51,7 +51,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 15px;
+    padding: 4px 15px;
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
@@ -90,9 +90,11 @@ body {
 }
 
 .nav-logo-img {
-    height: 42px;
+    height: 50px;
     width: auto;
     display: block;
+    filter: brightness(0) saturate(100%) invert(100%);
+    margin: -8px 0;
 }
 
 .nav-right {
@@ -168,6 +170,7 @@ body {
 .nav-social-icon {
     width: 18px;
     height: 18px;
+    filter: brightness(0) saturate(100%) invert(100%);
 }
 
 .nav-social-icon:hover {
@@ -232,6 +235,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    padding-top: 70px;
 }
 
 /* ===== SECTIONS ===== */
@@ -663,6 +667,62 @@ span[itemprop="email"] {
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
+/* iPhone XR and similar devices (414px) */
+@media (max-width: 414px) and (min-width: 376px) {
+    .nav-container {
+        padding: 2px 10px;
+        gap: 8px;
+    }
+    
+    .nav-logo {
+        display: flex !important;
+        align-items: center;
+    }
+    
+    .nav-logo-img {
+        height: 42px;
+        margin: -6px 0;
+    }
+    
+    .nav-links {
+        gap: 6px;
+    }
+    
+    .nav-link {
+        font-size: 11px;
+        padding: 4px 7px;
+    }
+    
+    .nav-social {
+        gap: 5px;
+    }
+    
+    .nav-social-icon {
+        width: 15px;
+        height: 15px;
+    }
+    
+    /* Main content adjustments for iPhone XR */
+    #main-content {
+        padding: 0 12px;
+        padding-top: 65px;
+    }
+    
+    .portfolio-section,
+    .about-section,
+    .contact-section {
+        padding: 15px 12px;
+        margin: 2px 0;
+    }
+    
+    /* Page title adjustments */
+    .page-title {
+        font-size: 18px;
+        padding: 8px 0;
+        margin-bottom: 8px;
+    }
+}
+
 @media (max-width: 480px) {
     /* Body adjustments for mobile footer spacing */
     body {
@@ -670,28 +730,39 @@ span[itemprop="email"] {
     }
     
     /* Navigation adjustments */
+    .nav-container {
+        padding: 3px 12px;
+        gap: 8px;
+    }
+    
     .nav-links {
-        gap: 0px;
+        gap: 6px;
     }
     
-    /* Mobile nav logo adjustments */
+    .nav-link {
+        font-size: 11px;
+        padding: 4px 6px;
+    }
+    
+    /* Mobile nav logo adjustments - ensure always visible */
     .nav-logo {
-        display: block !important;
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    
-    .nav-logo.visible {
-        opacity: 1 !important;
-        transform: scale(1);
-        margin-right: 10px;
+        display: flex !important;
+        align-items: center;
     }
     
     .nav-logo-img {
-        height: 36px;
+        height: 38px;
         width: auto;
         margin: -6px 0;
+    }
+    
+    .nav-social {
+        gap: 5px;
+    }
+    
+    .nav-social-icon {
+        width: 15px;
+        height: 15px;
     }
     
     /* Main content adjustments */
@@ -832,6 +903,11 @@ span[itemprop="email"] {
 
 @media (max-width: 375px) {
     /* Extra small screen adjustments */
+    .nav-container {
+        padding: 2px 8px;
+        gap: 8px;
+    }
+    
     .nav-links {
         gap: 0px;
     }
@@ -842,8 +918,14 @@ span[itemprop="email"] {
         margin: -4px 0;
     }
     
-    .navigation {
-        padding: 8px 12px;
+    .nav-link {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+    
+    .nav-social-icon {
+        width: 14px;
+        height: 14px;
     }
     
     .nav-link {
