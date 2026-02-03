@@ -60,7 +60,7 @@ const instagramPostsData = [
         id: 8,
         imageUrl: 'https://picsum.photos/400/400?random=8',
         permalink: 'https://www.instagram.com/p/example8/',
-        caption: 'Outdoor space staging for maximum curb appeal. First impressions matter in real estate. #curbappeal #outdoor #firststimpression',
+        caption: 'Outdoor space staging for maximum curb appeal. First impressions matter in real estate. #curbappeal #outdoor #firstimpression',
         timestamp: '2024-01-12T12:00:00.000Z'
     },
     {
@@ -81,7 +81,7 @@ const instagramPostsData = [
         id: 11,
         imageUrl: 'https://picsum.photos/400/400?random=11',
         permalink: 'https://www.instagram.com/p/example11/',
-        caption: 'Entryway staging that welcomes buyers home. Making great first impressions from the moment they walk in. #entryway #welcome #firsstimpression',
+        caption: 'Entryway staging that welcomes buyers home. Making great first impressions from the moment they walk in. #entryway #welcome #firstimpression',
         timestamp: '2024-01-05T12:00:00.000Z'
     },
     {

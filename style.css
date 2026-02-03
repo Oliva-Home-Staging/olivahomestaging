@@ -2,6 +2,9 @@
    OLIVA HOME STAGING - CLEAN CSS
    =========================================== */
 
+/* Import Montserrat font (similar to Futura PT used by bellacasasf.com) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
 /* ===== ROOT VARIABLES ===== */
 :root {
     --primary-green: #5a6b5d;
@@ -15,6 +18,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Universal font family for buttons and anchors */
+button, a {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -40,9 +48,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding-top: 0;
-    padding-bottom: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -78,28 +84,28 @@ body {
 }
 
 .nav-logo a {
-    text-decoration: none !important;
-    border: none !important;
-    background: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    text-decoration: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     align-items: center;
-    color: inherit !important;
-    outline: none !important;
-    box-shadow: none !important;
+    color: inherit;
+    outline: none;
+    box-shadow: none;
 }
 
 .nav-logo a:hover,
 .nav-logo a:focus,
 .nav-logo a:active,
 .nav-logo a.active {
-    background: none !important;
-    border: none !important;
-    transform: none !important;
-    color: inherit !important;
-    box-shadow: none !important;
-    outline: none !important;
+    background: none;
+    border: none;
+    transform: none;
+    color: inherit;
+    box-shadow: none;
+    outline: none;
 }
 
 .nav-logo-img {
@@ -133,7 +139,8 @@ body {
     border-radius: 20px;
     transition: all 0.3s ease;
     z-index: 1;
-    pointer-events: none;}
+    pointer-events: none;
+}
 
 .nav-social {
     display: flex;
@@ -145,6 +152,7 @@ body {
 .nav-link {
     color: white;
     text-decoration: none;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 14px;
     padding: 6px 12px;
@@ -236,6 +244,7 @@ body {
 .page-title-display {
     color: #5a6b5d;
     margin: 0;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 24px;
     text-align: center;
@@ -298,6 +307,7 @@ section {
 .contact-item h3 {
     color: #5a6b5d;
     margin-bottom: 10px;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 .contact-address {
@@ -421,8 +431,6 @@ span[itemprop="email"] {
     flex-shrink: 0;
 }
 
-/* Portfolio carousel removed for redesign */
-
 /* ===== INSTAGRAM FEED ===== */
 .instagram-feed-section {
     background: transparent;
@@ -435,6 +443,12 @@ span[itemprop="email"] {
     transform: translateX(calc(-50% + 50vw));
     box-sizing: border-box;
     max-width: none !important;
+}
+
+/* Ensure Instagram section uses correct font */
+.instagram-feed-section button,
+.instagram-feed-section a {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
 }
 
 .instagram-grid {
@@ -520,7 +534,8 @@ span[itemprop="email"] {
     border: none;
     padding: 15px 30px;
     border-radius: 30px;
-    font-weight: bold;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: normal;
     font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -545,7 +560,8 @@ span[itemprop="email"] {
     display: inline-block;
     color: var(--primary-green);
     text-decoration: none;
-    font-weight: bold;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: normal;
     font-size: 14px;
     transition: all 0.3s ease;
     text-transform: uppercase;
@@ -740,7 +756,7 @@ span[itemprop="email"] {
 @media (max-width: 480px) {
     /* Body adjustments for mobile footer spacing */
     body {
-        padding-bottom: 120px !important;
+        padding-bottom: 120px;
     }
     
     /* Navigation adjustments */
@@ -839,9 +855,6 @@ span[itemprop="email"] {
     }
 }
 
-/* Portfolio carousel removed for redesign */
-}
-
 @media (max-width: 375px) {
     /* Extra small screen adjustments */
     .nav-container {
@@ -867,11 +880,6 @@ span[itemprop="email"] {
     .nav-social-icon {
         width: 14px;
         height: 14px;
-    }
-    
-    .nav-link {
-        font-size: 11px;
-        padding: 3px 6px;
     }
     
     .equation-container {
