@@ -11,6 +11,8 @@
     --dark-green: #36454f;
     --white: #fff;
     --light-gray: rgba(255, 255, 255, 0.95);
+    /* Mobile viewport height fix */
+    --vh: 1vh;
 }
 
 /* Base Reset */
@@ -52,6 +54,88 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+/* ===== SPLASH SCREEN ===== */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Mobile viewport fix */
+    height: calc(var(--vh, 1vh) * 100); /* Use dynamic viewport height for better mobile support */
+    min-height: 100vh; /* Fallback for older browsers */
+    background-color: #C96654;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: transform 0.8s ease-in-out;
+    /* Mobile Safari specific fixes */
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+}
+
+.splash-screen.hide {
+    transform: translateY(-100%);
+}
+
+.splash-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-logo-img {
+    height: 400px;
+    width: auto;
+    max-height: 70vh;
+    max-width: 90vw;
+    filter: brightness(0) saturate(100%) invert(100%);
+    opacity: 0;
+    animation: fadeInLogo 0.6s ease-in-out 0.2s forwards;
+}
+
+/* Mobile-specific splash screen adjustments */
+@media (max-width: 768px) {
+    .splash-screen {
+        /* Ensure splash screen covers entire mobile screen */
+        height: 100vh;
+        height: 100dvh;
+        /* Fix for iOS Safari viewport issues */
+        min-height: -webkit-fill-available;
+    }
+    
+    .splash-logo-img {
+        height: 300px;
+        max-height: 60vh;
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .splash-logo-img {
+        height: 250px;
+        max-height: 50vh;
+        max-width: 75vw;
+    }
+}
+
+@keyframes fadeInLogo {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hide splash screen after animation */
+.splash-screen.hidden {
+    display: none;
 }
 
 /* ===== NAVIGATION ===== */
@@ -342,14 +426,21 @@ section {
 .service-list li {
     margin-bottom: 5px;
     color: #666;
+    font-size: 16px;
+    line-height: 1.25;
 }
 
 .contact-item p {
     color: #666;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-bottom: 15px;
 }
 
 span[itemprop="email"] {
     color: #666;
+    font-size: 16px;
+    line-height: 1.25;
 }
 
 .contact-social-media {
@@ -365,6 +456,8 @@ span[itemprop="email"] {
     text-decoration: none;
     color: #5a6b5d;
     transition: transform 0.3s ease;
+    font-size: 16px;
+    line-height: 1.25;
 }
 
 .contact-social-link:hover {
@@ -745,6 +838,36 @@ span[itemprop="email"] {
         margin: 2px 0;
     }
     
+    /* Mobile font sizing for about and contact content */
+    .about-text p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .contact-item h3 {
+        font-size: 16px;
+    }
+    
+    .contact-item p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .service-list li {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    span[itemprop="email"] {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .contact-social-link {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
     /* Page title adjustments */
     .page-title {
         font-size: 18px;
@@ -754,11 +877,6 @@ span[itemprop="email"] {
 }
 
 @media (max-width: 480px) {
-    /* Body adjustments for mobile footer spacing */
-    body {
-        padding-bottom: 120px;
-    }
-    
     /* Navigation adjustments */
     .nav-container {
         padding: 3px 12px;
@@ -805,6 +923,43 @@ span[itemprop="email"] {
     .contact-section {
         padding: 20px 15px;
         margin: 2px 0;
+    }
+    
+    /* Mobile font sizing for about and contact content */
+    .about-text p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+    
+    .contact-item {
+        margin-bottom: 20px;
+    }
+    
+    .contact-item h3 {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+    
+    .contact-item p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .service-list li {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 4px;
+    }
+    
+    span[itemprop="email"] {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .contact-social-link {
+        font-size: 13px;
+        line-height: 1.5;
     }
     
     /* Equation container adjustments */

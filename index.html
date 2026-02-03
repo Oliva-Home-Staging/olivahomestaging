@@ -286,6 +286,13 @@
 </script>
 
 <body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-logo">
+            <img src="olivalogovertical.svg" alt="Oliva Home Staging" class="splash-logo-img">
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navigation">
         <div class="nav-container">
@@ -334,6 +341,40 @@
     </footer>
 
     <script>
+        // Mobile viewport height fix for iOS Safari
+        function setMobileViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        
+        // Set on load and resize
+        window.addEventListener('load', setMobileViewportHeight);
+        window.addEventListener('resize', setMobileViewportHeight);
+        window.addEventListener('orientationchange', setMobileViewportHeight);
+        
+        // Splash screen functionality
+        function initSplashScreen() {
+            const splashScreen = document.getElementById('splash-screen');
+            
+            // Show splash screen on any initial load (not on refresh or navigation within session)
+            if (!sessionStorage.getItem('splashShown')) {
+                sessionStorage.setItem('splashShown', 'true');
+                
+                // Hide splash screen after 1 second with curtain animation
+                setTimeout(() => {
+                    splashScreen.classList.add('hide');
+                    
+                    // Remove from DOM after animation completes
+                    setTimeout(() => {
+                        splashScreen.classList.add('hidden');
+                    }, 800); // Match the CSS transition duration
+                }, 1000);
+            } else {
+                // If splash was already shown in this session, hide it immediately
+                splashScreen.classList.add('hidden');
+            }
+        }
+
         // Page content definitions
         const pageContent = {
             index: {
@@ -666,8 +707,8 @@
             }
         }
 
-        // Initialize with portfolio page
-        document.addEventListener('DOMContentLoaded', function() {
+        // Initialize page content immediately to prevent flashing
+        function initializePageContent() {
             // Check if there's a hash in the URL to determine initial page
             let initialPage = 'index';
             let activeLink = null;
@@ -699,7 +740,7 @@
                     }
                 });
             } else {
-                // Default to portfolio
+                // Default to home
                 navLinks.forEach(link => {
                     if (link.textContent.trim() === 'Home') {
                         activeLink = link;
@@ -710,6 +751,16 @@
             
             showPage(initialPage, activeLink || navLinks[0], false); // false = no animation on initial load
             // Initialize slider position after a short delay to ensure layout is ready
+            setTimeout(initializeNavSlider, 100);
+        }
+
+        // Initialize page content immediately, then splash screen
+        initializePageContent();
+        initSplashScreen();
+        
+        // Also listen for DOMContentLoaded as backup
+        document.addEventListener('DOMContentLoaded', function() {
+            // Content already initialized above, just ensure it's ready
             setTimeout(initializeNavSlider, 100);
         });
     </script>
