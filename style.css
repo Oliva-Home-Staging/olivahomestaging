@@ -130,7 +130,7 @@ body {
 }
 
 .nav-link {
-    color: #5a6b5d;
+    color: white;
     text-decoration: none;
     font-weight: normal;
     font-size: 14px;
@@ -146,7 +146,7 @@ body {
 }
 
 .nav-link:hover {
-    border: 2px solid #5a6b5d;
+    border: 2px solid white;
     transform: scale(1.05);
 }
 
