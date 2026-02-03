@@ -7,8 +7,8 @@
 
 /* ===== ROOT VARIABLES ===== */
 :root {
-    --primary-green: #5a6b5d;
-    --dark-green: #36454f;
+    --primary-green: #000000;
+    --dark-green: #000000;
     --white: #fff;
     --light-gray: rgba(255, 255, 255, 0.95);
     /* Mobile viewport height fix */
@@ -219,7 +219,9 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    background: #5a6b5d;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     transition: all 0.3s ease;
     z-index: 1;
@@ -320,13 +322,13 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    padding: 60px 20px 0 20px;
+    padding: 100px 20px 0 20px;
     flex-grow: 1;
     margin: 0 auto;
 }
 
 .page-title-display {
-    color: #5a6b5d;
+    color: #000000;
     margin: 0;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-weight: normal;
@@ -359,7 +361,7 @@ section {
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     width: 100%;
-    border: 3px solid #5a6b5d;
+    border: 3px solid #000000;
 }
 
 
@@ -389,7 +391,7 @@ section {
 }
 
 .contact-item h3 {
-    color: #5a6b5d;
+    color: #000000;
     margin-bottom: 10px;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
@@ -454,7 +456,7 @@ span[itemprop="email"] {
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    color: #5a6b5d;
+    color: #000000;
     transition: transform 0.3s ease;
     font-size: 16px;
     line-height: 1.25;
@@ -498,7 +500,7 @@ span[itemprop="email"] {
 }
 
 .equation-text {
-    color: #5a6b5d;
+    color: #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -519,7 +521,7 @@ span[itemprop="email"] {
 .equation-operator {
     font-size: 20px;
     font-weight: bold;
-    color: #5a6b5d;
+    color: #000000;
     margin: 0 5px;
     flex-shrink: 0;
 }
@@ -743,7 +745,7 @@ span[itemprop="email"] {
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    border-top: 2px solid #5a6b5d;
+    border-top: 2px solid #000000;
 }
 
 .bottom-nav-container {
@@ -757,7 +759,7 @@ span[itemprop="email"] {
 }
 
 .bottom-nav-contact {
-    color: #5a6b5d;
+    color: #000000;
     font-size: 13px;
     font-weight: bold;
     transition: transform 0.3s ease;
