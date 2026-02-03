@@ -440,7 +440,7 @@ span[itemprop="email"] {
 .instagram-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0px;
+    gap: 10px;
     width: 100%;
     max-width: none;
     margin: 0;
@@ -565,7 +565,7 @@ span[itemprop="email"] {
 @media (max-width: 480px) {
     .instagram-grid {
         grid-template-columns: 1fr;
-        gap: 0px;
+        gap: 10px;
         padding: 0;
     }
     
@@ -588,7 +588,7 @@ span[itemprop="email"] {
 @media (min-width: 481px) and (max-width: 768px) {
     .instagram-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0px;
+        gap: 10px;
         padding: 0;
     }
     
@@ -606,7 +606,7 @@ span[itemprop="email"] {
 @media (min-width: 769px) and (max-width: 1024px) {
     .instagram-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 0px;
+        gap: 10px;
         padding: 0;
     }
 }
@@ -615,7 +615,7 @@ span[itemprop="email"] {
 @media (min-width: 1025px) {
     .instagram-grid {
         grid-template-columns: repeat(4, 1fr);
-        gap: 0px;
+        gap: 10px;
         padding: 0;
     }
 }
