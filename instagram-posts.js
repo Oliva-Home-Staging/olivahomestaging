@@ -19,95 +19,11 @@
 
 const instagramPostsData = [
     {
-        id: 1,
-        imageUrl: 'instagram-photos/1_DTd4_GrklAj_1.jpg',
-        permalink: 'https://www.instagram.com/p/DTd4_GrklAj/',
-        caption: 'This beautifully staged family room offers plenty of seating for cozy movie nights and lively family game time, wrapped in a perfectly balanced color palette that stirs emotion and makes buyers instantly think, I must have this house.',
-        timestamp: '2024-02-15T12:00:00.000Z'
-    },
-    {
-        id: 2,
-        imageUrl: 'instagram-photos/2_DTd4npDEicY_1.jpg',
-        permalink: 'https://www.instagram.com/p/DTd4npDEicY/?img_index=2',
-        caption: 'The dining room is thoughtfully staged with a glass table top and a graceful orchid arrangement, creating a sense of openness and anticipation for a welcoming meal shared at the table.',
-        timestamp: '2024-02-14T12:00:00.000Z'
-    },
-    {
-        id: 3,
-        imageUrl: 'instagram-photos/2_DTd4npDEicY_2.jpg',
-        permalink: 'https://www.instagram.com/p/DTd4npDEicY/?img_index=1',
-        caption: 'The dining room is thoughtfully staged with a glass table top and a graceful orchid arrangement, creating a sense of openness and anticipation for a welcoming meal shared at the table.',
-        timestamp: '2024-02-13T12:00:00.000Z'
-    },
-    {
-        id: 4,
-        imageUrl: 'instagram-photos/3_DTd3qrpEg2s_1.jpg',
-        permalink: 'https://www.instagram.com/p/DTd3qrpEg2s/?img_index=2',
-        caption: 'Using proper scale and a refined aesthetic is everything—especially in a beachfront condo like this. We curated European-style modern furnishings to enhance the contemporary vibe, keep the space light and elevated, and let the coastal views take center stage. The result is a clean, intentional design that today\'s buyers instantly connect with.',
-        timestamp: '2024-02-12T12:00:00.000Z'
-    },
-    {
-        id: 5,
-        imageUrl: 'instagram-photos/3_DTd3qrpEg2s_2.jpg',
-        permalink: 'https://www.instagram.com/p/DTd3qrpEg2s/?img_index=1',
-        caption: 'Using proper scale and a refined aesthetic is everything—especially in a beachfront condo like this. We curated European-style modern furnishings to enhance the contemporary vibe, keep the space light and elevated, and let the coastal views take center stage. The result is a clean, intentional design that today\'s buyers instantly connect with.',
-        timestamp: '2024-02-11T12:00:00.000Z'
-    },
-    {
-        id: 6,
-        imageUrl: 'instagram-photos/4_DTbTKv5Ep9v_1.jpg',
-        permalink: 'https://www.instagram.com/p/DTbTKv5Ep9v/?img_index=2',
-        caption: 'A grand living room with soaring vaulted ceilings deserves furniture that matches its scale—thoughtful pieces that highlight the architectural beauty while defining a refined, formal gathering space. When the proportions are right, the room truly shines.',
-        timestamp: '2024-02-10T12:00:00.000Z'
-    },
-    {
-        id: 7,
-        imageUrl: 'instagram-photos/4_DTbTKv5Ep9v_2.jpg',
-        permalink: 'https://www.instagram.com/p/DTbTKv5Ep9v/?img_index=1',
-        caption: 'A grand living room with soaring vaulted ceilings deserves furniture that matches its scale—thoughtful pieces that highlight the architectural beauty while defining a refined, formal gathering space. When the proportions are right, the room truly shines.',
-        timestamp: '2024-02-09T12:00:00.000Z'
-    },
-    {
-        id: 8,
-        imageUrl: 'instagram-photos/5_DTbRLG1EhPy_1.jpg',
-        permalink: 'https://www.instagram.com/p/DTbRLG1EhPy/?img_index=3',
-        caption: 'The perfect bedroom setup 🤍 fluffy pillows, soft layers, for a cozy climb into bed—your peaceful, joyful place to unwind and end the day just right. 💤✨',
-        timestamp: '2024-02-08T12:00:00.000Z'
-    },
-    {
-        id: 9,
-        imageUrl: 'instagram-photos/5_DTbRLG1EhPy_2.jpg',
-        permalink: 'https://www.instagram.com/p/DTbRLG1EhPy/?img_index=2',
-        caption: 'The perfect bedroom setup 🤍 fluffy pillows, soft layers, for a cozy climb into bed—your peaceful, joyful place to unwind and end the day just right. 💤✨',
-        timestamp: '2024-02-07T12:00:00.000Z'
-    },
-    {
-        id: 10,
-        imageUrl: 'instagram-photos/5_DTbRLG1EhPy_3.jpg',
-        permalink: 'https://www.instagram.com/p/DTbRLG1EhPy/?img_index=1',
-        caption: 'The perfect bedroom setup 🤍 fluffy pillows, soft layers, for a cozy climb into bed—your peaceful, joyful place to unwind and end the day just right. 💤✨',
-        timestamp: '2024-02-06T12:00:00.000Z'
-    },
-    {
-        id: 11,
-        imageUrl: 'instagram-photos/6_DTbQdl4kqKl_1.jpg',
-        permalink: 'https://www.instagram.com/p/DTbQdl4kqKl/?img_index=2',
-        caption: 'A warm, welcoming family room designed for real life—where cozy textures, thoughtful staging, and effortless style come together to make you feel right at home.',
-        timestamp: '2024-02-05T12:00:00.000Z'
-    },
-    {
-        id: 12,
-        imageUrl: 'instagram-photos/6_DTbQdl4kqKl_2.jpg',
-        permalink: 'https://www.instagram.com/p/DTbQdl4kqKl/?img_index=1',
-        caption: 'A warm, welcoming family room designed for real life—where cozy textures, thoughtful staging, and effortless style come together to make you feel right at home.',
-        timestamp: '2024-02-04T12:00:00.000Z'
-    },
-    {
-        id: 13,
-        imageUrl: 'instagram-photos/7_DTQo5NHAbcz_1.jpg',
-        permalink: 'https://www.instagram.com/p/DTQo5NHAbcz/',
-        caption: 'A kitchen designed for connection ☀️ Perfectly placed counter stools invite easy mornings over breakfast and effortless conversations while the cooking begins.',
-        timestamp: '2024-02-03T12:00:00.000Z'
+        id: 15,
+        imageUrl: 'instagram-photos/9_DTPFapiFIwi_1.jpg',
+        permalink: 'https://www.instagram.com/p/DTPFapiFIwi/',
+        caption: 'A cozy swivel chair, a curated console, and room for stories to unfold. This is where comfort meets conversation.',
+        timestamp: '2024-02-01T12:00:00.000Z'
     },
     {
         id: 14,
@@ -117,11 +33,81 @@ const instagramPostsData = [
         timestamp: '2024-02-02T12:00:00.000Z'
     },
     {
-        id: 15,
-        imageUrl: 'instagram-photos/9_DTPFapiFIwi_1.jpg',
-        permalink: 'https://www.instagram.com/p/DTPFapiFIwi/',
-        caption: 'A cozy swivel chair, a curated console, and room for stories to unfold. This is where comfort meets conversation.',
-        timestamp: '2024-02-01T12:00:00.000Z'
+        id: 13,
+        imageUrl: 'instagram-photos/7_DTQo5NHAbcz_1.jpg',
+        permalink: 'https://www.instagram.com/p/DTQo5NHAbcz/',
+        caption: 'A kitchen designed for connection ☀️ Perfectly placed counter stools invite easy mornings over breakfast and effortless conversations while the cooking begins.',
+        timestamp: '2024-02-03T12:00:00.000Z'
+    },
+    {
+        id: 12,
+        imageUrl: 'instagram-photos/6_DTbQdl4kqKl_2.jpg',
+        permalink: 'https://www.instagram.com/p/DTbQdl4kqKl/?img_index=1',
+        caption: 'A warm, welcoming family room designed for real life—where cozy textures, thoughtful staging, and effortless style come together to make you feel right at home.',
+        timestamp: '2024-02-04T12:00:00.000Z'
+    },
+    {
+        id: 11,
+        imageUrl: 'instagram-photos/6_DTbQdl4kqKl_1.jpg',
+        permalink: 'https://www.instagram.com/p/DTbQdl4kqKl/?img_index=2',
+        caption: 'A warm, welcoming family room designed for real life—where cozy textures, thoughtful staging, and effortless style come together to make you feel right at home.',
+        timestamp: '2024-02-05T12:00:00.000Z'
+    },
+    {
+        id: 10,
+        imageUrl: 'instagram-photos/5_DTbRLG1EhPy_3.jpg',
+        permalink: 'https://www.instagram.com/p/DTbRLG1EhPy/?img_index=1',
+        caption: 'The perfect bedroom setup 🤍 fluffy pillows, soft layers, for a cozy climb into bed—your peaceful, joyful place to unwind and end the day just right. 💤✨',
+        timestamp: '2024-02-06T12:00:00.000Z'
+    },
+    {
+        id: 9,
+        imageUrl: 'instagram-photos/5_DTbRLG1EhPy_2.jpg',
+        permalink: 'https://www.instagram.com/p/DTbRLG1EhPy/?img_index=2',
+        caption: 'The perfect bedroom setup 🤍 fluffy pillows, soft layers, for a cozy climb into bed—your peaceful, joyful place to unwind and end the day just right. 💤✨',
+        timestamp: '2024-02-07T12:00:00.000Z'
+    },
+    {
+        id: 8,
+        imageUrl: 'instagram-photos/5_DTbRLG1EhPy_1.jpg',
+        permalink: 'https://www.instagram.com/p/DTbRLG1EhPy/?img_index=3',
+        caption: 'The perfect bedroom setup 🤍 fluffy pillows, soft layers, for a cozy climb into bed—your peaceful, joyful place to unwind and end the day just right. 💤✨',
+        timestamp: '2024-02-08T12:00:00.000Z'
+    },
+    {
+        id: 7,
+        imageUrl: 'instagram-photos/4_DTbTKv5Ep9v_2.jpg',
+        permalink: 'https://www.instagram.com/p/DTbTKv5Ep9v/?img_index=1',
+        caption: 'A grand living room with soaring vaulted ceilings deserves furniture that matches its scale—thoughtful pieces that highlight the architectural beauty while defining a refined, formal gathering space. When the proportions are right, the room truly shines.',
+        timestamp: '2024-02-09T12:00:00.000Z'
+    },
+    {
+        id: 5,
+        imageUrl: 'instagram-photos/3_DTd3qrpEg2s_2.jpg',
+        permalink: 'https://www.instagram.com/p/DTd3qrpEg2s/?img_index=1',
+        caption: 'Using proper scale and a refined aesthetic is everything—especially in a beachfront condo like this. We curated European-style modern furnishings to enhance the contemporary vibe, keep the space light and elevated, and let the coastal views take center stage. The result is a clean, intentional design that today\'s buyers instantly connect with.',
+        timestamp: '2024-02-11T12:00:00.000Z'
+    },
+    {
+        id: 4,
+        imageUrl: 'instagram-photos/3_DTd3qrpEg2s_1.jpg',
+        permalink: 'https://www.instagram.com/p/DTd3qrpEg2s/?img_index=2',
+        caption: 'Using proper scale and a refined aesthetic is everything—especially in a beachfront condo like this. We curated European-style modern furnishings to enhance the contemporary vibe, keep the space light and elevated, and let the coastal views take center stage. The result is a clean, intentional design that today\'s buyers instantly connect with.',
+        timestamp: '2024-02-12T12:00:00.000Z'
+    },
+    {
+        id: 3,
+        imageUrl: 'instagram-photos/2_DTd4npDEicY_2.jpg',
+        permalink: 'https://www.instagram.com/p/DTd4npDEicY/?img_index=1',
+        caption: 'The dining room is thoughtfully staged with a glass table top and a graceful orchid arrangement, creating a sense of openness and anticipation for a welcoming meal shared at the table.',
+        timestamp: '2024-02-13T12:00:00.000Z'
+    },
+    {
+        id: 1,
+        imageUrl: 'instagram-photos/1_DTd4_GrklAj_1.jpg',
+        permalink: 'https://www.instagram.com/p/DTd4_GrklAj/',
+        caption: 'This beautifully staged family room offers plenty of seating for cozy movie nights and lively family game time, wrapped in a perfectly balanced color palette that stirs emotion and makes buyers instantly think, I must have this house.',
+        timestamp: '2024-02-15T12:00:00.000Z'
     }
 ];
 
