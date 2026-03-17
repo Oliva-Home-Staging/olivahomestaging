@@ -481,6 +481,8 @@
                     <!-- Contact Section -->
                     <section class="contact-section">
                         <div class="contact-content">
+
+                            <!-- Original contact info -->
                             <div class="contact-details">
                                 <div class="contact-item">
                                     <h3>Email Us</h3>
@@ -493,34 +495,76 @@
                                         </span>
                                     </address>
                                 </div>
-                                
                                 <div class="contact-item">
                                     <h3>Service Areas</h3>
                                     <p>Los Angeles, Pasadena, and surrounding areas</p>
                                 </div>
-                                
-                                <div class="contact-item">
-                                    <h3>What We Offer</h3>
-                                    <ul class="service-list">
-                                        <li>Flat-rate investment pricing</li>
-                                        <li>3 months included</li>
-                                        <li>Complete design service</li>
-                                        <li>Professional staging</li>
-                                        <li>Move-out</li>
-                                    </ul>
-                                </div>
-                                
                                 <div class="contact-item">
                                     <h3>Follow Us</h3>
                                     <div class="contact-social-media">
                                         <a href="https://www.instagram.com/olivahomestaging/" class="contact-social-link" target="_blank" rel="noopener noreferrer">
-                                            <img src="instagram-icon.png" 
-                                                 alt="Oliva Instagram" class="contact-social-icon">
+                                            <img src="instagram-icon.png" alt="Oliva Instagram" class="contact-social-icon">
                                             <span>@olivahomestaging</span>
                                         </a>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Divider -->
+                            <div class="contact-info-divider"><span>or submit a request below</span></div>
+
+                            <!-- Success panel (hidden until form submitted) -->
+                            <div class="form-success" id="formSuccess" style="display:none;" aria-live="polite">
+                                <div class="form-success-icon">
+                                    <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="26" cy="26" r="25" stroke="#2e7d32" stroke-width="2" fill="#f1f8f1"/>
+                                        <path d="M14 26l9 9 15-17" stroke="#2e7d32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3 class="form-success-title">Request Received!</h3>
+                                <p class="form-success-msg">Thank you for reaching out. We&rsquo;ll review your staging request and be in touch with you shortly.</p>
+                            </div>
+
+                            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xeerrbaj" method="POST" onsubmit="handleContactSubmit(event)">
+                                <div class="form-group">
+                                    <label for="cf-name">Name</label>
+                                    <input type="text" id="cf-name" name="name" required placeholder="Your full name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cf-email">Email</label>
+                                    <input type="email" id="cf-email" name="email" required placeholder="your@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cf-phone">Phone Number</label>
+                                    <input type="tel" id="cf-phone" name="phone" placeholder="(555) 000-0000" maxlength="14" autocomplete="tel" inputmode="numeric">
+                                </div>
+                                <div class="form-group">
+                                    <label>I am a</label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="role" value="Realtor" required>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Realtor</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="role" value="Seller">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Seller</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cf-address">Staging Property Address</label>
+                                    <input type="text" id="cf-address" name="property_address" required placeholder="123 Main St, Los Angeles, CA 90001">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cf-date">Requested Staging Installation Date</label>
+                                    <input type="date" id="cf-date" name="installation_date" required>
+                                </div>
+                                <button type="submit" class="form-submit-btn">Send Request</button>
+                                <p class="form-status" id="formStatus" aria-live="polite"></p>
+                            </form>
+
                         </div>
                     </section>
                 `
@@ -704,6 +748,10 @@
                     setTimeout(() => {
                         initInstagramFeed();
                     }, 100);
+                } else if (pageName === 'contact') {
+                    setTimeout(() => {
+                        initPhoneField();
+                    }, 100);
                 }
             }
         }
@@ -803,6 +851,87 @@
             showPage(initialPage, activeLink || navLinks[0], false); // false = no animation on initial load
             // Initialize slider position after a short delay to ensure layout is ready
             setTimeout(initializeNavSlider, 100);
+        }
+
+        // Phone number field: digits-only with (XXX) XXX-XXXX auto-formatting
+        function initPhoneField() {
+            var phoneInput = document.getElementById('cf-phone');
+            if (!phoneInput) return;
+
+            function formatPhone(raw) {
+                var digits = raw.replace(/\D/g, '').substring(0, 10);
+                if (digits.length === 0) return '';
+                if (digits.length <= 3) return '(' + digits;
+                if (digits.length <= 6) return '(' + digits.substring(0,3) + ') ' + digits.substring(3);
+                return '(' + digits.substring(0,3) + ') ' + digits.substring(3,6) + '-' + digits.substring(6);
+            }
+
+            phoneInput.addEventListener('keydown', function(e) {
+                // Allow: backspace, delete, tab, escape, enter, arrows, home, end
+                var allowed = [8, 9, 13, 27, 46, 35, 36, 37, 38, 39, 40];
+                if (allowed.indexOf(e.keyCode) !== -1) return;
+                // Allow Ctrl/Cmd+A, C, V, X
+                if ((e.ctrlKey || e.metaKey) && [65, 67, 86, 88].indexOf(e.keyCode) !== -1) return;
+                // Block anything that isn't a digit key (0–9 on main keyboard or numpad)
+                var isDigit = (e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105);
+                if (!isDigit) e.preventDefault();
+            });
+
+            phoneInput.addEventListener('input', function() {
+                var pos = this.selectionStart;
+                var prevLen = this.value.length;
+                this.value = formatPhone(this.value);
+                // Adjust cursor: if we added formatting chars, nudge cursor forward
+                var diff = this.value.length - prevLen;
+                this.setSelectionRange(pos + diff, pos + diff);
+            });
+
+            phoneInput.addEventListener('paste', function(e) {
+                e.preventDefault();
+                var pasted = (e.clipboardData || window.clipboardData).getData('text');
+                this.value = formatPhone(this.value + pasted);
+            });
+        }
+
+        // Contact form submission handler
+        async function handleContactSubmit(event) {
+            event.preventDefault();
+            var form = event.target;
+            var statusEl = document.getElementById('formStatus');
+            var submitBtn = form.querySelector('.form-submit-btn');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending\u2026';
+            statusEl.textContent = '';
+            statusEl.className = 'form-status';
+
+            try {
+                var response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    form.style.display = 'none';
+                    var successEl = document.getElementById('formSuccess');
+                    if (successEl) successEl.style.display = 'flex';
+                } else {
+                    var data = await response.json();
+                    var msg = data.errors
+                        ? data.errors.map(function(e) { return e.message; }).join(', ')
+                        : 'Something went wrong. Please try again.';
+                    statusEl.textContent = msg;
+                    statusEl.classList.add('form-status--error');
+                }
+            } catch (err) {
+                statusEl.textContent = 'Something went wrong. Please try again.';
+                statusEl.classList.add('form-status--error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Request';
+            }
         }
 
         // Initialize page content immediately, then splash screen
