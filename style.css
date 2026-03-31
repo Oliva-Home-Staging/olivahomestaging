@@ -17,7 +17,6 @@
 
 /* Base Reset */
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -30,7 +29,6 @@ button, a {
 html {
     overflow-x: hidden;
     width: 100%;
-}
 
 /* SEO Hidden Content */
 .visually-hidden {
@@ -343,7 +341,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    padding-top: 70px;
 }
 
 /* ===== SECTIONS ===== */
@@ -835,7 +832,6 @@ span[itemprop="email"] {
     /* Main content adjustments for iPhone XR */
     #main-content {
         padding: 0 12px;
-        padding-top: 65px;
     }
     
     .about-section,
