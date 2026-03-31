@@ -471,10 +471,10 @@ span[itemprop="email"] {
 /* ===== EQUATION CONTAINER ===== */
 .equation-container {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    gap: 8px;
-    padding: 0 15px;
+    gap: 4px;
+    padding: 0 10px;
     border-radius: 15px;
     width: 100%;
     flex-wrap: nowrap;
@@ -484,16 +484,18 @@ span[itemprop="email"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     text-align: center;
-    min-width: 50px;
+    min-width: 44px;
+    min-height: 78px;
     flex: 1;
 }
 
 .equation-icon {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 8px;
+    width: 38px;
+    height: 38px;
     filter: opacity(0.8);
+    flex-shrink: 0;
 }
 
 .equation-text {
@@ -501,6 +503,10 @@ span[itemprop="email"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    width: 100%;
+    text-align: center;
 }
 
 .equation-number {
@@ -513,13 +519,17 @@ span[itemprop="email"] {
     font-size: 10px;
     font-weight: bold;
     line-height: 1.1;
+    text-align: center;
 }
 
 .equation-operator {
+    display: flex;
+    align-items: center;
     font-size: 20px;
     font-weight: bold;
     color: #000000;
-    margin: 0 5px;
+    margin: 0 2px;
+    align-self: stretch;
     flex-shrink: 0;
 }
 
@@ -966,17 +976,18 @@ span[itemprop="email"] {
     
     /* Equation container adjustments */
     .equation-container {
-        gap: 4px;
-        padding: 0 10px;
+        gap: 2px;
+        padding: 0 8px;
     }
     
     .equation-item {
-        min-width: 45px;
+        min-width: 40px;
+        min-height: 70px;
     }
     
     .equation-icon {
-        width: 28px;
-        height: 28px;
+        width: 34px;
+        height: 34px;
     }
     
     .equation-number {
@@ -986,10 +997,14 @@ span[itemprop="email"] {
     .equation-title {
         font-size: 9px;
     }
+
+    .equation-text {
+        min-height: 34px;
+    }
     
     .equation-operator {
         font-size: 16px;
-        margin: 0 3px;
+        margin: 0 1px;
     }
     
     /* Bottom nav adjustments */
@@ -1247,17 +1262,18 @@ span[itemprop="email"] {
     }
     
     .equation-container {
-        gap: 2px;
-        padding: 0 8px;
+        gap: 1px;
+        padding: 0 6px;
     }
     
     .equation-item {
-        min-width: 40px;
+        min-width: 36px;
+        min-height: 62px;
     }
     
     .equation-icon {
-        width: 24px;
-        height: 24px;
+        width: 29px;
+        height: 29px;
     }
     
     .equation-number {
@@ -1267,10 +1283,14 @@ span[itemprop="email"] {
     .equation-title {
         font-size: 8px;
     }
+
+    .equation-text {
+        min-height: 30px;
+    }
     
     .equation-operator {
         font-size: 14px;
-        margin: 0 2px;
+        margin: 0 1px;
     }
     
     .bottom-nav-contact {
