@@ -19,6 +19,34 @@
 
 const instagramPostsData = [
     {
+        id: 33,
+        imageUrl: 'instagram-photos/12_DWr43_FEs36_1.jpg',
+        permalink: 'https://www.instagram.com/p/DWr43_FEs36/?img_index=1',
+        caption: 'We brought in warm birch wood tones, soft textures, and inviting layers to completely transform the space into something that feels alive, welcoming, and ready to be lived in. It’s amazing what thoughtful staging can do to turn a house into a home.',
+        timestamp: '2026-04-06T12:00:00.000Z'
+    },
+    {
+        id: 32,
+        imageUrl: 'instagram-photos/12_DWr43_FEs36_2.jpg',
+        permalink: 'https://www.instagram.com/p/DWr43_FEs36/?img_index=2',
+        caption: 'We brought in warm birch wood tones, soft textures, and inviting layers to completely transform the space into something that feels alive, welcoming, and ready to be lived in. It’s amazing what thoughtful staging can do to turn a house into a home.',
+        timestamp: '2026-04-06T12:00:00.000Z'
+    },
+    {
+        id: 31,
+        imageUrl: 'instagram-photos/12_DWr43_FEs36_3.jpg',
+        permalink: 'https://www.instagram.com/p/DWr43_FEs36/?img_index=3',
+        caption: 'We brought in warm birch wood tones, soft textures, and inviting layers to completely transform the space into something that feels alive, welcoming, and ready to be lived in. It’s amazing what thoughtful staging can do to turn a house into a home.',
+        timestamp: '2026-04-06T12:00:00.000Z'
+    },
+    {
+        id: 30,
+        imageUrl: 'instagram-photos/12_DWr43_FEs36_4.jpg',
+        permalink: 'https://www.instagram.com/p/DWr43_FEs36/?img_index=4',
+        caption: 'We brought in warm birch wood tones, soft textures, and inviting layers to completely transform the space into something that feels alive, welcoming, and ready to be lived in. It’s amazing what thoughtful staging can do to turn a house into a home.',
+        timestamp: '2026-04-06T12:00:00.000Z'
+    },
+    {
         id: 29,
         imageUrl: 'instagram-photos/11_DWU2IT7gSSj_1.jpg',
         permalink: 'https://www.instagram.com/p/DWU2IT7gSSj/?img_index=1',
