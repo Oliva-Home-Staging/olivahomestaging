@@ -19,6 +19,27 @@
 
 const instagramPostsData = [
     {
+        id: 36,
+        imageUrl: 'instagram-photos/13_DXIKPoUEtEN_1.jpg',
+        permalink: 'https://www.instagram.com/p/DXIKPoUEtEN/?img_index=1',
+        caption: 'From overlooked to irresistible ✨\n\nThis Glendale home hit the market without staging with a previous broker—and like many, it struggled to show its full potential.\n\nOur Realtor client trusted us to transform the space, and with the right furniture, layout, and design expertise, we brought the home to life—creating a warm, inviting atmosphere that buyers can instantly connect with.\n\nStaging isn\'t just decor—it\'s strategy. And when done right, it makes all the difference.\n\nReady to elevate your listing? Let\'s make your property stand out. 🏡',
+        timestamp: '2026-04-14T12:00:00.000Z'
+    },
+    {
+        id: 35,
+        imageUrl: 'instagram-photos/13_DXIKPoUEtEN_2.jpg',
+        permalink: 'https://www.instagram.com/p/DXIKPoUEtEN/?img_index=2',
+        caption: 'From overlooked to irresistible ✨\n\nThis Glendale home hit the market without staging with a previous broker—and like many, it struggled to show its full potential.\n\nOur Realtor client trusted us to transform the space, and with the right furniture, layout, and design expertise, we brought the home to life—creating a warm, inviting atmosphere that buyers can instantly connect with.\n\nStaging isn\'t just decor—it\'s strategy. And when done right, it makes all the difference.\n\nReady to elevate your listing? Let\'s make your property stand out. 🏡',
+        timestamp: '2026-04-14T12:00:00.000Z'
+    },
+    {
+        id: 34,
+        imageUrl: 'instagram-photos/13_DXIKPoUEtEN_3.jpg',
+        permalink: 'https://www.instagram.com/p/DXIKPoUEtEN/?img_index=3',
+        caption: 'From overlooked to irresistible ✨\n\nThis Glendale home hit the market without staging with a previous broker—and like many, it struggled to show its full potential.\n\nOur Realtor client trusted us to transform the space, and with the right furniture, layout, and design expertise, we brought the home to life—creating a warm, inviting atmosphere that buyers can instantly connect with.\n\nStaging isn\'t just decor—it\'s strategy. And when done right, it makes all the difference.\n\nReady to elevate your listing? Let\'s make your property stand out. 🏡',
+        timestamp: '2026-04-14T12:00:00.000Z'
+    },
+    {
         id: 33,
         imageUrl: 'instagram-photos/12_DWr43_FEs36_1.jpg',
         permalink: 'https://www.instagram.com/p/DWr43_FEs36/?img_index=1',
