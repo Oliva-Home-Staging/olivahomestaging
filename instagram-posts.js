@@ -19,6 +19,13 @@
 
 const instagramPostsData = [
     {
+        id: 37,
+        imageUrl: 'instagram-photos/14_DXa5E5rgLez_1.jpg',
+        permalink: 'https://www.instagram.com/p/DXa5E5rgLez/?img_index=1',
+        caption: 'From the perfect chaise lounge to this inviting sunroom, our recent San Marino staging was designed to help buyers instantly picture themselves relaxing and calling this house home. Thoughtful staging creates emotion, connection, and stronger offers. Real estate agents, let us help make your next listing irresistible! ✨🏡',
+        timestamp: '2026-04-22T12:00:00.000Z'
+    },
+    {
         id: 36,
         imageUrl: 'instagram-photos/13_DXIKPoUEtEN_1.jpg',
         permalink: 'https://www.instagram.com/p/DXIKPoUEtEN/?img_index=1',
