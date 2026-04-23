@@ -29,6 +29,7 @@ button, a {
 html {
     overflow-x: hidden;
     width: 100%;
+}
 
 /* SEO Hidden Content */
 .visually-hidden {
